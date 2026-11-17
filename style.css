@@ -327,7 +327,7 @@ img, svg {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2.25rem 0 1.5rem;
+  padding: max(3.8rem, calc(var(--safe-top) + 2.8rem)) 0 1.5rem;
   position: relative;
   inline-size: 100%;
 }
@@ -365,11 +365,14 @@ img, svg {
   justify-content: center;
   gap: 0.4rem;
   font-family: var(--font-devanagari);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--marigold-bright);
   margin-bottom: 0.85rem;
   text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
   flex-wrap: wrap;
+  max-width: calc(100% - 100px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sacred-divider-dot {
@@ -384,21 +387,21 @@ img, svg {
   padding: 0.32rem 1rem;
   border: 1px solid var(--marigold-gold);
   border-radius: 9999px;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   letter-spacing: 0.16em;
   font-family: var(--font-sans);
   font-weight: 600;
   color: var(--gold-300);
   background: rgba(245, 158, 11, 0.1);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .cinematic-kicker {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: var(--lotus-pink);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .grandparents-names {
@@ -409,7 +412,7 @@ img, svg {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
   letter-spacing: 0.02em;
   filter: drop-shadow(0 3px 15px rgba(0, 0, 0, 0.85));
 }
@@ -425,68 +428,42 @@ img, svg {
 
 .anniversary-subtitle {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: var(--text-chandan);
-  margin-bottom: 0.3rem;
-}
-
-.golden-anniversary-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.7rem, 1.25rem + 1.8vw, 2.3rem);
-  color: var(--marigold-bright);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.years-counter {
-  font-size: 0.84rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--lotus-pink);
-  margin-bottom: 1.5rem;
-}
-
-/* Holy Shloka Box */
-.holy-shloka-box {
-  background: linear-gradient(135deg, rgba(38, 22, 54, 0.7) 0%, rgba(22, 13, 34, 0.8) 100%);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  border-left: 3px solid var(--kesar-light);
-  border-right: 3px solid var(--kesar-light);
-  border-radius: 12px;
-  padding: 0.85rem 1.15rem;
-  margin: 0 auto 1.75rem;
-  max-inline-size: 420px;
-  inline-size: 100%;
-}
-
-.holy-shloka-sanskrit {
-  font-family: var(--font-devanagari);
   font-size: 1.05rem;
-  color: var(--marigold-bright);
+  color: var(--text-chandan);
   margin-bottom: 0.25rem;
 }
 
-.holy-shloka-meaning {
+.golden-anniversary-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.95rem);
+  color: var(--marigold-bright);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.years-counter {
   font-family: var(--font-serif);
+  font-size: 0.95rem;
   font-style: italic;
-  font-size: 0.92rem;
-  color: var(--text-chandan);
-  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: var(--gold-300);
+  margin-bottom: 1.25rem;
 }
 
 /* Live Countdown Card */
 .countdown-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
+  background: rgba(24, 12, 38, 0.55);
+  border: 1px solid rgba(245, 158, 11, 0.22);
   border-radius: 16px;
-  padding: 1rem 0.85rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 16px rgba(245, 158, 11, 0.12);
+  padding: 0.85rem 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 12px rgba(245, 158, 11, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  margin: 0 auto 1.75rem;
+  margin: 0.25rem auto 1.5rem;
   margin-inline: auto;
   inline-size: 100%;
-  max-inline-size: 340px;
+  max-inline-size: 320px;
   box-sizing: border-box;
 }
 

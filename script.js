@@ -28,12 +28,10 @@ const EVENT_CONFIG = {
 };
 
 // =============================================================================
-// 1. Sacred Temple Bell & Meditative Raga Synthesis (Web Audio API)
+// 1. Sacred Temple Bell & Instrumental Audio (Achyutam Keshavam)
 // =============================================================================
 let audioCtx = null;
 let isAudioPlaying = false;
-let ambientInterval = null;
-let customAudioElement = null;
 
 function getAudioContext() {
   if (!audioCtx) {
@@ -82,106 +80,34 @@ function playTempleBell() {
   });
 }
 
+function getBgMusicElement() {
+  return document.getElementById('bgMusic');
+}
+
 // Instrumental: Achyutam Keshavam
 function startAmbientMusic() {
-  if (!customAudioElement) {
-    customAudioElement = new Audio();
-    // Test for AAC/M4A support (Safari/iOS), fallback to MP3 (Android/desktop)
-    const canPlayM4A = customAudioElement.canPlayType('audio/mp4; codecs="mp4a.40.2"');
-    customAudioElement.src = (canPlayM4A !== '') ? EVENT_CONFIG.customAudioUrl : EVENT_CONFIG.customAudioFallbackUrl;
-    customAudioElement.loop = true;
-    customAudioElement.volume = 0.65;
-    customAudioElement.preload = 'auto';
+  const audio = getBgMusicElement();
+  if (!audio) return;
 
-    // Loop fallback
-    customAudioElement.addEventListener('ended', () => {
-      customAudioElement.currentTime = 0;
-      customAudioElement.play().catch(() => {});
-    });
-  }
-
-  const playPromise = customAudioElement.play();
+  audio.volume = 0.85;
+  const playPromise = audio.play();
   if (playPromise !== undefined) {
     playPromise.then(() => {
       isAudioPlaying = true;
       updateAudioUI(true);
-    }).catch(() => {
-      // Fallback to synthesized Achyutam Keshavam flute melody
-      playSynthesizedRaga();
+    }).catch(err => {
+      // Browser autoplay policy prevented playback without gesture
+      updateAudioUI(false);
     });
   }
-}
-
-// Fallback: Synthesized Bansuri Flute melody of "Achyutam Keshavam"
-function playSynthesizedRaga() {
-  const ctx = getAudioContext();
-  if (!ctx) return;
-
-  isAudioPlaying = true;
-  updateAudioUI(true);
-
-  // Note-by-note Achyutam Keshavam in D-major (Bansuri flute scale)
-  const achyutamPhrases = [
-    // Phrase 1: "Ach-yu-tam Ke-sha-vam"
-    [{ f: 440.00, d: 0.35 }, { f: 440.00, d: 0.35 }, { f: 440.00, d: 0.45 }, { f: 493.88, d: 0.45 }, { f: 440.00, d: 0.8 }],
-    // Phrase 2: "Ra-ma Na-ra-ya-nam"
-    [{ f: 392.00, d: 0.35 }, { f: 369.99, d: 0.35 }, { f: 392.00, d: 0.5 }, { f: 440.00, d: 0.9 }],
-    // Phrase 3: "Krish-na Da-mo-da-ram"
-    [{ f: 369.99, d: 0.35 }, { f: 369.99, d: 0.35 }, { f: 369.99, d: 0.45 }, { f: 392.00, d: 0.45 }, { f: 369.99, d: 0.8 }],
-    // Phrase 4: "Va-su-de-vam Ha-rim"
-    [{ f: 329.63, d: 0.35 }, { f: 293.66, d: 0.35 }, { f: 329.63, d: 0.5 }, { f: 369.99, d: 0.9 }],
-    // Phrase 5: "Ja-na-ki Na-ya-kam"
-    [{ f: 369.99, d: 0.35 }, { f: 369.99, d: 0.35 }, { f: 392.00, d: 0.45 }, { f: 369.99, d: 0.8 }],
-    // Phrase 6: "Ram-chan-dram Bha-je"
-    [{ f: 329.63, d: 0.4 }, { f: 293.66, d: 0.4 }, { f: 329.63, d: 0.5 }, { f: 293.66, d: 1.2 }]
-  ];
-
-  let phraseIdx = 0;
-  function playNextPhrase() {
-    if (!isAudioPlaying) return;
-    const phrase = achyutamPhrases[phraseIdx % achyutamPhrases.length];
-    phraseIdx++;
-
-    let accumulatedTime = 0;
-    phrase.forEach(note => {
-      setTimeout(() => {
-        if (!isAudioPlaying) return;
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-
-        // Warm bamboo flute / bansuri timbre using triangle wave
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(note.f, now);
-
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(0.06, now + 0.08);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + note.d + 0.8);
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(now);
-        osc.stop(now + note.d + 0.9);
-      }, accumulatedTime * 1000);
-
-      accumulatedTime += (note.d + 0.15);
-    });
-  }
-
-  playNextPhrase();
-  ambientInterval = setInterval(playNextPhrase, 3800);
 }
 
 function stopAmbientMusic() {
+  const audio = getBgMusicElement();
+  if (audio) {
+    audio.pause();
+  }
   isAudioPlaying = false;
-  if (customAudioElement) {
-    customAudioElement.pause();
-  }
-  if (ambientInterval) {
-    clearInterval(ambientInterval);
-    ambientInterval = null;
-  }
   updateAudioUI(false);
 }
 
@@ -194,10 +120,10 @@ function updateAudioUI(playing) {
     btn.classList.toggle('playing', playing);
   }
   if (label) {
-    label.textContent = playing ? 'Music On' : 'Music';
+    label.textContent = playing ? 'Music On' : 'Play Music ♫';
   }
   if (icon) {
-    icon.style.opacity = playing ? '1' : '0.5';
+    icon.style.opacity = playing ? '1' : '0.6';
   }
 }
 
@@ -206,9 +132,11 @@ function updateAudioUI(playing) {
 // =============================================================================
 function initAudioControls() {
   const audioToggleBtn = document.getElementById('audioToggleBtn');
+  const audio = getBgMusicElement();
 
   if (audioToggleBtn) {
-    audioToggleBtn.addEventListener('click', () => {
+    audioToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (isAudioPlaying) {
         stopAmbientMusic();
       } else {
@@ -217,6 +145,32 @@ function initAudioControls() {
       }
     });
   }
+
+  if (audio) {
+    audio.addEventListener('play', () => {
+      isAudioPlaying = true;
+      updateAudioUI(true);
+    });
+    audio.addEventListener('pause', () => {
+      isAudioPlaying = false;
+      updateAudioUI(false);
+    });
+  }
+
+  // Attempt autoplay immediately
+  startAmbientMusic();
+
+  // One-time unlock for mobile (iOS Safari / Android Chrome)
+  // When user touches the screen, sound unlocks immediately!
+  const unlockAudio = () => {
+    if (!isAudioPlaying) {
+      startAmbientMusic();
+    }
+  };
+
+  ['touchstart', 'touchend', 'click', 'scroll', 'pointerdown'].forEach(evt => {
+    document.addEventListener(evt, unlockAudio, { once: true, passive: true, capture: true });
+  });
 
   // Optional celebratory burst when the page loads
   setTimeout(() => {

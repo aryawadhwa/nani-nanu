@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anita & Vimal — 50th Golden Anniversary Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  html, body {
+    width: 1200px;
+    height: 1800px;
+    overflow: hidden;
+    background: #0b0514;
+    color: #f7f3ea;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card-container {
+    width: 1200px;
+    height: 1800px;
+    position: relative;
+    background: radial-gradient(circle at 50% 28%, #4a2168 0%, #26113b 45%, #0c0516 92%);
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Dual Luxury Gold Borders */
+  .border-outer {
+    position: absolute;
+    top: 40px; left: 40px; right: 40px; bottom: 40px;
+    border: 2px solid rgba(220, 180, 85, 0.75);
+    border-radius: 28px;
+    pointer-events: none;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 158, 11, 0.15);
+  }
+
+  .border-inner {
+    position: absolute;
+    top: 54px; left: 54px; right: 54px; bottom: 54px;
+    border: 1px solid rgba(245, 205, 110, 0.4);
+    border-radius: 20px;
+    pointer-events: none;
+  }
+
+  /* Corner Ornaments */
+  .corner-ornament {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    color: #e5b85c;
+  }
+  .c-tl { top: 62px; left: 62px; }
+  .c-tr { top: 62px; right: 62px; transform: scaleX(-1); }
+  .c-bl { bottom: 62px; left: 62px; transform: scaleY(-1); }
+  .c-br { bottom: 62px; right: 62px; transform: scale(-1); }
+
+  /* Ambient Gold Star Dust */
+  .stardust-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    background-image: 
+      radial-gradient(1.5px 1.5px at 150px 220px, #ffd782 100%, transparent),
+      radial-gradient(2px 2px at 320px 480px, #ffd782 100%, transparent),
+      radial-gradient(1.5px 1.5px at 980px 260px, #ffd782 100%, transparent),
+      radial-gradient(2.5px 2.5px at 890px 580px, #ffd782 100%, transparent),
+      radial-gradient(1.5px 1.5px at 200px 880px, #ffd782 100%, transparent),
+      radial-gradient(2px 2px at 1040px 920px, #ffd782 100%, transparent),
+      radial-gradient(1.5px 1.5px at 180px 1320px, #ffd782 100%, transparent),
+      radial-gradient(2px 2px at 960px 1410px, #ffd782 100%, transparent),
+      radial-gradient(1.5px 1.5px at 450px 1650px, #ffd782 100%, transparent);
+    opacity: 0.55;
+  }
+
+  /* Card Content Layout */
+  .card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    text-align: center;
+  }
+
+  /* Header Section */
+  .sanskrit-header {
+    font-family: 'Rozha One', 'Devanagari Sangam MN', serif;
+    font-size: 27px;
+    color: #e8bf6a;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .sanskrit-header span {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  }
+  .dot-sep {
+    color: #d4a742;
+    font-size: 20px;
+  }
+
+  /* Medallion */
+  .emblem-wrap {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gold-medallion {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid #e8bf6a;
+    box-shadow: 0 0 20px rgba(232, 191, 106, 0.35), inset 0 0 15px rgba(232, 191, 106, 0.25);
+    background: radial-gradient(circle, #3d1b54 0%, #200d30 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .gold-medallion::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border: 1px dashed rgba(232, 191, 106, 0.6);
+    border-radius: 50%;
+  }
+  .med-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff2b8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  }
+  .med-lbl {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: #e8bf6a;
+    margin-top: 2px;
+  }
+
+  /* Kicker */
+  .kicker {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    font-style: italic;
+    color: #e5b85c;
+    letter-spacing: 0.08em;
+    margin-top: 16px;
+  }
+
+  /* Couple Names */
+  .couple-names {
+    font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #fff7d6 0%, #ffd276 45%, #e0a33c 85%, #fff1ba 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.85));
+  }
+  .couple-names .amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 64px;
+    margin: 0 10px;
+    -webkit-text-fill-color: #ffd782;
+  }
+
+  /* Taglines */
+  .vows-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: #f0e6d2;
+    margin-top: 10px;
+  }
+  .invite-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #cfbda2;
+    margin-top: 12px;
+  }
+  .anniversary-gold-h2 {
+    font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffd782;
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+    text-shadow: 0 2px 12px rgba(245, 158, 11, 0.4);
+  }
+
+  /* Divider */
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 600px;
+    margin: 14px 0 10px;
+  }
+  .div-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(229, 184, 92, 0.65), transparent);
+  }
+  .div-diamond {
+    width: 12px;
+    height: 12px;
+    background: #e5b85c;
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(229, 184, 92, 0.6);
+  }
+
+  /* ITINERARY */
+  .itinerary-box {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .itin-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    color: #e5b85c;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .days-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .day-row {
+    background: rgba(26, 12, 38, 0.55);
+    border: 1px solid rgba(220, 180, 85, 0.28);
+    border-radius: 14px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .day-row.wedding-highlight {
+    background: rgba(48, 20, 68, 0.75);
+    border: 1.5px solid rgba(245, 205, 105, 0.65);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.15);
+  }
+
+  .day-meta {
+    text-align: left;
+    min-width: 250px;
+  }
+  .day-name {
+    font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffd782;
+  }
+  .day-theme {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #d1bda2;
+    text-transform: uppercase;
+  }
+
+  .day-events {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .event-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #f7f3ea;
+  }
+  .event-line strong {
+    color: #ffd782;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .event-line.gala-highlight strong {
+    color: #fff1ba;
+    font-size: 15px;
+  }
+
+  /* VENUE SECTION */
+  .venue-block {
+    margin-top: 10px;
+  }
+  .venue-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: #d4a742;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .venue-name {
+    font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff2b8;
+    margin-top: 4px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  }
+  .venue-addr {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #d8c8b4;
+    margin-top: 4px;
+  }
+
+  /* RSVP SECTION */
+  .rsvp-block {
+    width: 900px;
+    margin-top: 10px;
+  }
+  .rsvp-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: #e5b85c;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .rsvp-cards-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  .rsvp-person-card {
+    background: rgba(22, 10, 32, 0.75);
+    border: 1px solid rgba(220, 180, 85, 0.4);
+    border-radius: 12px;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 320px;
+  }
+  .avatar-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4a742, #8b6820);
+    color: #12061c;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .person-info {
+    text-align: left;
+  }
+  .p-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff2b8;
+    line-height: 1.1;
+  }
+  .p-phone {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffd782;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  /* HOSTS & BLESSING FOOTER */
+  .footer-block {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hosts-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #d1bda2;
+    margin-bottom: 10px;
+  }
+  .sanskrit-vow {
+    font-family: 'Rozha One', 'Devanagari Sangam MN', serif;
+    font-size: 24px;
+    color: #ffd782;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  }
+  .vow-translation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: #c4b098;
+    margin-top: 3px;
+  }
+  .dates-pill {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #d4a742;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  
+  <div class="stardust-layer"></div>
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
+
+  <!-- SVG Corner Ornaments -->
+  <svg class="corner-ornament c-tl" viewBox="0 0 44 44" fill="none">
+    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
+    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
+    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
+    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
+    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+  </svg>
+  <svg class="corner-ornament c-tr" viewBox="0 0 44 44" fill="none">
+    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
+    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
+    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
+    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
+    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+  </svg>
+  <svg class="corner-ornament c-bl" viewBox="0 0 44 44" fill="none">
+    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
+    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
+    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
+    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
+    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+  </svg>
+  <svg class="corner-ornament c-br" viewBox="0 0 44 44" fill="none">
+    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
+    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
+    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
+    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
+    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+  </svg>
+
+  <div class="card-content">
+    
+    <!-- TOP INVOCATIONS -->
+    <div class="sanskrit-header">
+      <span>॥ श्री गणेशाय नमः ॥</span>
+      <span class="dot-sep">•</span>
+      <span>॥ श्री जानकीवल्लभो विजयते ॥</span>
+    </div>
+
+    <!-- 50 YEARS EMBLEM -->
+    <div class="emblem-wrap">
+      <div class="gold-medallion">
+        <span class="med-num">50</span>
+        <span class="med-lbl">YEARS</span>
+      </div>
+    </div>
+
+    <!-- KICKER & NAMES -->
+    <div class="names-block">
+      <p class="kicker">Ayodhya Dham • Suvarna Mahotsav</p>
+      <h1 class="couple-names">ANITA <span class="amp">&</span> VIMAL</h1>
+      <p class="vows-sub">Fifty golden years of sacred vows and enduring devotion</p>
+      <p class="invite-line">Together with their family, cordially invite you to celebrate their</p>
+      <h2 class="anniversary-gold-h2">50th Golden Anniversary</h2>
+    </div>
+
+    <div class="gold-divider">
+      <div class="div-line"></div>
+      <div class="div-diamond"></div>
+      <div class="div-line"></div>
+    </div>
+
+    <!-- CELEBRATION ITINERARY -->
+    <div class="itinerary-box">
+      <p class="itin-title">— Celebration Itinerary —</p>
+      
+      <div class="days-grid">
+        <!-- Day 1 -->
+        <div class="day-row">
+          <div class="day-meta">
+            <h3 class="day-name">Friday, Dec 26</h3>
+            <p class="day-theme">Welcome & Sangeet</p>
+          </div>
+          <div class="day-events">
+            <p class="event-line"><strong>2:00 PM</strong> Welcome Lunch &nbsp;•&nbsp; <strong>4:30 PM</strong> High Tea</p>
+            <p class="event-line"><strong>5:30 PM</strong> Evening Dance & Sangeet &nbsp;•&nbsp; <strong>8:30 PM</strong> Dinner Feasts</p>
+          </div>
+        </div>
+
+        <!-- Day 2 (HIGHLIGHT) -->
+        <div class="day-row wedding-highlight">
+          <div class="day-meta">
+            <h3 class="day-name">Saturday, Dec 27</h3>
+            <p class="day-theme">Wedding & Gala Dinner</p>
+          </div>
+          <div class="day-events">
+            <p class="event-line"><strong>10:00 AM</strong> Breakfast &nbsp;•&nbsp; <strong>2:00 PM</strong> Luncheon</p>
+            <p class="event-line gala-highlight"><strong>6:00 PM</strong> Wedding Programme &nbsp;•&nbsp; <strong>8:00 PM</strong> Gala Dinner</p>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-row">
+          <div class="day-meta">
+            <h3 class="day-name">Sunday, Dec 28</h3>
+            <p class="day-theme">Farewell & Departures</p>
+          </div>
+          <div class="day-events">
+            <p class="event-line"><strong>9:00 AM</strong> Farewell Breakfast & Blessings</p>
+            <p class="event-line"><strong>11:00 AM</strong> Checkout & Departures</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gold-divider">
+      <div class="div-line"></div>
+      <div class="div-diamond"></div>
+      <div class="div-line"></div>
+    </div>
+
+    <!-- VENUE -->
+    <div class="venue-block">
+      <p class="venue-tag">Celebration Venue</p>
+      <h3 class="venue-name">Sawarthia Sewa Sadan</h3>
+      <p class="venue-addr">NH-27, Shahnewajpur Manjha, Ayodhya Dham, Uttar Pradesh</p>
+    </div>
+
+    <!-- RSVP -->
+    <div class="rsvp-block">
+      <p class="rsvp-title">R. S. V. P.</p>
+      <div class="rsvp-cards-wrap">
+        <div class="rsvp-person-card">
+          <div class="avatar-badge">K</div>
+          <div class="person-info">
+            <p class="p-name">Kunal</p>
+            <p class="p-phone">+91 98390 19029</p>
+          </div>
+        </div>
+        <div class="rsvp-person-card">
+          <div class="avatar-badge">T</div>
+          <div class="person-info">
+            <p class="p-name">Trisha</p>
+            <p class="p-phone">+91 99841 34800</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER BLESSING -->
+    <div class="footer-block">
+      <p class="hosts-line">Lovingly hosted by children, grandchildren & family</p>
+      <p class="sanskrit-vow">"यदेतद्धृदयं तव तदस्तु हृदयं मम।"</p>
+      <p class="vow-translation">"May your heart be my heart, and may my heart be yours forever."</p>
+      <p class="dates-pill">Sawarthia Sewa Sadan • Ayodhya • December 26–28, 2026</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

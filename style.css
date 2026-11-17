@@ -5,52 +5,52 @@
 
 :root {
   /* ------------------------------------------------------------------------
-     Sacred Ayodhya Color Palette
+     Heritage Royal Ayodhya Color Palette (Bespoke Antique Champagne Gold)
      ------------------------------------------------------------------------ */
-  --bg-deep: #0c0813;              /* Twilight Temple Plum / Midnight Indigo */
-  --bg-surface: #140d20;           /* Warm Sandalwood Surface */
-  --bg-card: rgba(23, 16, 36, 0.85); /* Deep Silk Glass */
-  --bg-card-border: rgba(229, 169, 60, 0.35); /* Brass & Gold Inlay Border */
-  --bg-glass: rgba(18, 12, 28, 0.9);
+  --bg-deep: #09040e;              /* Midnight Velvet Obsidian */
+  --bg-surface: #14081e;           /* Rich Royal Plum */
+  --bg-card: rgba(18, 9, 27, 0.72); /* Smoked Obsidian Silk Glass */
+  --bg-card-border: rgba(212, 175, 55, 0.22); /* Hairline Antique Gold */
+  --bg-glass: rgba(14, 7, 21, 0.88);
 
-  /* Sacred Saffron (Kesariya) & Agni Glow */
-  --kesar-primary: #e65100;
-  --kesar-light: #ff7d26;
-  --kesar-glow: rgba(230, 81, 0, 0.42);
+  /* Antique Champagne & Heritage Golds */
+  --gold-100: #fff9e6;
+  --gold-200: #faedd0;
+  --gold-300: #f0dbaf;
+  --gold-400: #e2c27c;
+  --gold-500: #cfa959;
+  --gold-600: #ad8637;
+  --gold-700: #85611f;
+  --gold-glow: rgba(212, 175, 55, 0.12);
 
-  /* Auspicious Marigold (Genda Phool) & Haldi */
-  --marigold-gold: #f59e0b;
-  --marigold-bright: #fbbf24;
-  --marigold-glow: rgba(245, 158, 11, 0.38);
+  /* Aliases for seamless component harmony */
+  --marigold-gold: #cfa959;
+  --marigold-bright: #faedd0;
+  --marigold-glow: rgba(212, 175, 55, 0.12);
+  --kesar-primary: #7d1a29;
+  --kesar-light: #e2c27c;
+  --kesar-glow: rgba(212, 175, 55, 0.15);
 
-  /* Temple Brass & Liquid Gold Foil */
-  --gold-300: #fff2ad;
-  --gold-400: #eed582;
-  --gold-500: #d4af37;
-  --gold-600: #b58d24;
-  --gold-700: #886512;
-  --gold-glow: rgba(212, 175, 55, 0.45);
+  /* Regal Burgundy & Velvet Wine */
+  --kumkum-red: #6e1320;
+  --kumkum-deep: #4d0a14;
 
-  /* Sacred Kumkum / Alta Vermilion */
-  --kumkum-red: #8e1525;
-  --kumkum-deep: #660e1a;
-
-  /* Lotus & Lily Petal Blush */
-  --lotus-pink: #f7c5d2;
-  --lotus-blush: #e28ca0;
+  /* Lotus & Silk Blush */
+  --lotus-pink: #d8c2ad;
+  --lotus-blush: #c49980;
 
   /* Sandalwood (Chandan) Text */
-  --text-primary: #fcfbf7;
-  --text-secondary: #e5dfd3;
-  --text-muted: #ad9e8e;
-  --text-chandan: #f6ebd6;
+  --text-primary: #f8f5ee;
+  --text-secondary: #dfd7c8;
+  --text-muted: #a69888;
+  --text-chandan: #f2e7d3;
 
   --whatsapp-green: #25d366;
 
   /* Radiant Sacred Gradients */
-  --sacred-gold-gradient: linear-gradient(135deg, #fff5b8 0%, #f59e0b 35%, #d4af37 70%, #9a6f14 100%);
-  --gold-foil-text: linear-gradient(120deg, #fff9d2 10%, #f59e0b 35%, #d4af37 60%, #9e7315 85%, #fff2ad 100%);
-  --kesar-fire-gradient: linear-gradient(135deg, #ff9800 0%, #e65100 50%, #b71c1c 100%);
+  --sacred-gold-gradient: linear-gradient(135deg, #fff7de 0%, #e2c27c 45%, #cfa959 75%, #9e7428 100%);
+  --gold-foil-text: linear-gradient(135deg, #fff9e6 0%, #faedd0 30%, #dfbe76 55%, #b58933 80%, #faedd0 100%);
+  --kesar-fire-gradient: linear-gradient(135deg, #7d1a29 0%, #4a0d16 100%);
 
   /* Typography */
   --font-display: 'Cinzel Decorative', Georgia, serif;
@@ -91,10 +91,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.16) 0%, transparent 60%),
-    radial-gradient(ellipse at 85% 35%, rgba(230, 81, 0, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse at 15% 65%, rgba(142, 21, 37, 0.16) 0%, transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(212, 175, 55, 0.12) 0%, transparent 50%);
+    radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 85% 30%, rgba(110, 19, 32, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 70%, rgba(18, 9, 27, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -196,48 +196,51 @@ img, svg {
 .audio-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: rgba(20, 13, 32, 0.92);
-  border: 1px solid var(--marigold-gold);
+  gap: 0.45rem;
+  background: rgba(18, 9, 27, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.32);
   border-radius: 9999px;
-  padding: 0.35rem 0.85rem;
-  color: var(--gold-300);
+  padding: 0.36rem 0.95rem;
+  color: var(--gold-200);
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 12px var(--marigold-glow);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
 }
 
 .audio-btn:hover {
-  transform: scale(1.04);
-  border-color: var(--gold-300);
+  transform: translateY(-1px);
+  border-color: var(--gold-400);
+  color: #fff;
 }
 
 .audio-btn:not(.playing) {
-  animation: audio-glow-pulse 2.2s infinite ease-in-out;
+  animation: audio-glow-pulse 2.8s infinite ease-in-out;
 }
 
 @keyframes audio-glow-pulse {
   0%, 100% {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 8px rgba(245, 158, 11, 0.25);
-    border-color: rgba(245, 158, 11, 0.45);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 8px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.28);
   }
   50% {
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 16px rgba(245, 158, 11, 0.65);
-    border-color: var(--marigold-bright);
-    color: var(--gold-100);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 14px rgba(212, 175, 55, 0.25);
+    border-color: rgba(212, 175, 55, 0.55);
+    color: #fff;
   }
 }
 
 .audio-btn.playing {
-  border-color: var(--marigold-bright);
-  background: rgba(38, 22, 54, 0.95);
+  border-color: rgba(212, 175, 55, 0.55);
+  background: rgba(28, 14, 42, 0.9);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 0 16px rgba(212, 175, 55, 0.15);
+}
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 0 16px rgba(245, 158, 11, 0.45);
 }
 
@@ -435,36 +438,49 @@ img, svg {
 
 .golden-anniversary-title {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.95rem);
-  color: var(--marigold-bright);
-  letter-spacing: 0.05em;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.years-counter {
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  font-style: italic;
+  font-size: clamp(1.4rem, 1.15rem + 1.2vw, 2.1rem);
+  background: var(--gold-foil-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 0.06em;
-  color: var(--gold-300);
-  margin-bottom: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
-/* Live Countdown Card */
-.countdown-card {
-  background: rgba(24, 12, 38, 0.55);
-  border: 1px solid rgba(245, 158, 11, 0.22);
-  border-radius: 16px;
-  padding: 0.85rem 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 12px rgba(245, 158, 11, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  margin: 0.25rem auto 1.5rem;
-  margin-inline: auto;
-  inline-size: 100%;
-  max-inline-size: 320px;
-  box-sizing: border-box;
+/* Aristocratic Celebration Milestone Crest */
+.hero-dates-crest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.25rem auto 1.5rem;
+  width: 100%;
+  max-width: 380px;
+}
+
+.crest-line {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
+  margin: 0.65rem 0;
+}
+
+.hero-celebration-dates {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-200);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hero-celebration-place {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
 }
 
 .countdown-title {

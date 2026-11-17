@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Anita & Vimal — 50th Golden Anniversary Invitation</title>
+<title>Anita & Vimal — 50th Golden Anniversary</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
@@ -13,8 +13,8 @@
     width: 1200px;
     height: 1800px;
     overflow: hidden;
-    background: #0b0514;
-    color: #f7f3ea;
+    background: #09040e;
+    color: #f7f4ec;
     font-family: 'Cormorant Garamond', Georgia, serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -23,7 +23,7 @@
     width: 1200px;
     height: 1800px;
     position: relative;
-    background: radial-gradient(circle at 50% 28%, #4a2168 0%, #26113b 45%, #0c0516 92%);
+    background: radial-gradient(ellipse at 50% 25%, #2b133d 0%, #170a22 48%, #08030d 95%);
     padding: 44px;
     display: flex;
     flex-direction: column;
@@ -34,31 +34,32 @@
   .border-outer {
     position: absolute;
     top: 40px; left: 40px; right: 40px; bottom: 40px;
-    border: 2px solid rgba(220, 180, 85, 0.75);
-    border-radius: 28px;
+    border: 1.5px solid rgba(212, 175, 55, 0.45);
+    border-radius: 24px;
     pointer-events: none;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 158, 11, 0.15);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.08);
   }
 
   .border-inner {
     position: absolute;
-    top: 54px; left: 54px; right: 54px; bottom: 54px;
-    border: 1px solid rgba(245, 205, 110, 0.4);
-    border-radius: 20px;
+    top: 52px; left: 52px; right: 52px; bottom: 52px;
+    border: 0.75px solid rgba(212, 175, 55, 0.22);
+    border-radius: 16px;
     pointer-events: none;
   }
 
   /* Corner Ornaments */
   .corner-ornament {
     position: absolute;
-    width: 44px;
-    height: 44px;
-    color: #e5b85c;
+    width: 40px;
+    height: 40px;
+    color: #cda85c;
+    opacity: 0.8;
   }
-  .c-tl { top: 62px; left: 62px; }
-  .c-tr { top: 62px; right: 62px; transform: scaleX(-1); }
-  .c-bl { bottom: 62px; left: 62px; transform: scaleY(-1); }
-  .c-br { bottom: 62px; right: 62px; transform: scale(-1); }
+  .c-tl { top: 60px; left: 60px; }
+  .c-tr { top: 60px; right: 60px; transform: scaleX(-1); }
+  .c-bl { bottom: 60px; left: 60px; transform: scaleY(-1); }
+  .c-br { bottom: 60px; right: 60px; transform: scale(-1); }
 
   /* Ambient Gold Star Dust */
   .stardust-layer {
@@ -66,16 +67,16 @@
     top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
     background-image: 
-      radial-gradient(1.5px 1.5px at 150px 220px, #ffd782 100%, transparent),
-      radial-gradient(2px 2px at 320px 480px, #ffd782 100%, transparent),
-      radial-gradient(1.5px 1.5px at 980px 260px, #ffd782 100%, transparent),
-      radial-gradient(2.5px 2.5px at 890px 580px, #ffd782 100%, transparent),
-      radial-gradient(1.5px 1.5px at 200px 880px, #ffd782 100%, transparent),
-      radial-gradient(2px 2px at 1040px 920px, #ffd782 100%, transparent),
-      radial-gradient(1.5px 1.5px at 180px 1320px, #ffd782 100%, transparent),
-      radial-gradient(2px 2px at 960px 1410px, #ffd782 100%, transparent),
-      radial-gradient(1.5px 1.5px at 450px 1650px, #ffd782 100%, transparent);
-    opacity: 0.55;
+      radial-gradient(1.5px 1.5px at 150px 220px, #faedd0 100%, transparent),
+      radial-gradient(2px 2px at 320px 480px, #e2c27c 100%, transparent),
+      radial-gradient(1.5px 1.5px at 980px 260px, #faedd0 100%, transparent),
+      radial-gradient(2px 2px at 890px 580px, #dfbe76 100%, transparent),
+      radial-gradient(1.5px 1.5px at 200px 880px, #faedd0 100%, transparent),
+      radial-gradient(2px 2px at 1040px 920px, #e2c27c 100%, transparent),
+      radial-gradient(1.5px 1.5px at 180px 1320px, #dfbe76 100%, transparent),
+      radial-gradient(2px 2px at 960px 1410px, #faedd0 100%, transparent),
+      radial-gradient(1.5px 1.5px at 450px 1650px, #e2c27c 100%, transparent);
+    opacity: 0.35;
   }
 
   /* Card Content Layout */
@@ -87,43 +88,44 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 40px;
+    padding: 34px 44px;
     text-align: center;
   }
 
   /* Header Section */
   .sanskrit-header {
     font-family: 'Rozha One', 'Devanagari Sangam MN', serif;
-    font-size: 27px;
-    color: #e8bf6a;
-    letter-spacing: 0.04em;
+    font-size: 26px;
+    color: #dfbe76;
+    letter-spacing: 0.05em;
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 10px;
+    margin-top: 12px;
   }
   .sanskrit-header span {
-    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
   }
   .dot-sep {
-    color: #d4a742;
-    font-size: 20px;
+    color: #c49942;
+    font-size: 18px;
+    opacity: 0.7;
   }
 
   /* Medallion */
   .emblem-wrap {
-    margin-top: 12px;
+    margin-top: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .gold-medallion {
-    width: 96px;
-    height: 96px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    border: 2px solid #e8bf6a;
-    box-shadow: 0 0 20px rgba(232, 191, 106, 0.35), inset 0 0 15px rgba(232, 191, 106, 0.25);
-    background: radial-gradient(circle, #3d1b54 0%, #200d30 100%);
+    border: 1.5px solid rgba(223, 190, 118, 0.7);
+    box-shadow: 0 0 20px rgba(223, 190, 118, 0.15), inset 0 0 15px rgba(223, 190, 118, 0.12);
+    background: radial-gradient(circle, #251035 0%, #14081e 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,32 +136,31 @@
     content: '';
     position: absolute;
     top: 5px; left: 5px; right: 5px; bottom: 5px;
-    border: 1px dashed rgba(232, 191, 106, 0.6);
+    border: 1px dashed rgba(223, 190, 118, 0.4);
     border-radius: 50%;
   }
   .med-num {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 38px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1;
-    color: #fff2b8;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    color: #faedd0;
   }
   .med-lbl {
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    color: #e8bf6a;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    color: #dfbe76;
     margin-top: 2px;
   }
 
   /* Kicker */
   .kicker {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 27px;
+    font-size: 26px;
     font-style: italic;
-    color: #e5b85c;
+    color: #dfbe76;
     letter-spacing: 0.08em;
     margin-top: 16px;
   }
@@ -167,23 +168,23 @@
   /* Couple Names */
   .couple-names {
     font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
-    font-size: 70px;
+    font-size: 68px;
     font-weight: 900;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     line-height: 1.1;
-    margin-top: 8px;
-    background: linear-gradient(135deg, #fff7d6 0%, #ffd276 45%, #e0a33c 85%, #fff1ba 100%);
+    margin-top: 10px;
+    background: linear-gradient(135deg, #fff7de 0%, #e8ca84 42%, #c2953c 80%, #fcedc0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.85));
+    filter: drop-shadow(0 3px 12px rgba(0,0,0,0.85));
   }
   .couple-names .amp {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 62px;
     margin: 0 10px;
-    -webkit-text-fill-color: #ffd782;
+    -webkit-text-fill-color: #e2c27c;
   }
 
   /* Taglines */
@@ -191,26 +192,27 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 26px;
     font-style: italic;
-    color: #f0e6d2;
+    color: #eee4d2;
     margin-top: 10px;
+    letter-spacing: 0.02em;
   }
   .invite-line {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #cfbda2;
-    margin-top: 12px;
+    color: #c2b199;
+    margin-top: 14px;
   }
   .anniversary-gold-h2 {
     font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 700;
-    color: #ffd782;
-    letter-spacing: 0.06em;
+    color: #e8ca84;
+    letter-spacing: 0.08em;
     margin-top: 6px;
-    text-shadow: 0 2px 12px rgba(245, 158, 11, 0.4);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
   }
 
   /* Divider */
@@ -219,59 +221,59 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    width: 600px;
-    margin: 14px 0 10px;
+    width: 550px;
+    margin: 16px 0 12px;
   }
   .div-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(229, 184, 92, 0.65), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
   }
   .div-diamond {
-    width: 12px;
-    height: 12px;
-    background: #e5b85c;
+    width: 10px;
+    height: 10px;
+    background: #cfa959;
     transform: rotate(45deg);
-    box-shadow: 0 0 10px rgba(229, 184, 92, 0.6);
+    opacity: 0.85;
   }
 
   /* ITINERARY */
   .itinerary-box {
-    width: 1000px;
+    width: 980px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .itin-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
-    color: #e5b85c;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #cfa959;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   .days-grid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     width: 100%;
   }
 
   .day-row {
-    background: rgba(26, 12, 38, 0.55);
-    border: 1px solid rgba(220, 180, 85, 0.28);
-    border-radius: 14px;
-    padding: 12px 24px;
+    background: rgba(22, 10, 32, 0.45);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 12px;
+    padding: 14px 26px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .day-row.wedding-highlight {
-    background: rgba(48, 20, 68, 0.75);
-    border: 1.5px solid rgba(245, 205, 105, 0.65);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.15);
+    background: rgba(38, 16, 54, 0.65);
+    border: 1.2px solid rgba(223, 190, 118, 0.45);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
 
   .day-meta {
@@ -280,16 +282,16 @@
   }
   .day-name {
     font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 700;
-    color: #ffd782;
+    color: #faedd0;
   }
   .day-theme {
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: #d1bda2;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #c4b096;
     text-transform: uppercase;
   }
 
@@ -301,59 +303,61 @@
   }
   .event-line {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #f7f3ea;
+    font-size: 13.5px;
+    color: #eee4d2;
+    letter-spacing: 0.02em;
   }
   .event-line strong {
-    color: #ffd782;
+    color: #e8ca84;
     font-weight: 600;
     margin-right: 4px;
   }
   .event-line.gala-highlight strong {
-    color: #fff1ba;
-    font-size: 15px;
+    color: #fff4d4;
+    font-size: 14.5px;
   }
 
   /* VENUE SECTION */
   .venue-block {
-    margin-top: 10px;
+    margin-top: 14px;
   }
   .venue-tag {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    color: #d4a742;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: #cfa959;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
   }
   .venue-name {
     font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
-    font-size: 30px;
+    font-size: 29px;
     font-weight: 700;
-    color: #fff2b8;
+    color: #faedd0;
     margin-top: 4px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
   }
   .venue-addr {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #d8c8b4;
+    font-size: 13.5px;
+    color: #c4b4a0;
     margin-top: 4px;
+    letter-spacing: 0.03em;
   }
 
   /* RSVP SECTION */
   .rsvp-block {
     width: 900px;
-    margin-top: 10px;
+    margin-top: 14px;
   }
   .rsvp-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    color: #e5b85c;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    color: #cfa959;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   .rsvp-cards-wrap {
     display: flex;
@@ -361,8 +365,8 @@
     gap: 32px;
   }
   .rsvp-person-card {
-    background: rgba(22, 10, 32, 0.75);
-    border: 1px solid rgba(220, 180, 85, 0.4);
+    background: rgba(18, 8, 26, 0.65);
+    border: 1px solid rgba(212, 175, 55, 0.25);
     border-radius: 12px;
     padding: 12px 32px;
     display: flex;
@@ -371,13 +375,13 @@
     min-width: 320px;
   }
   .avatar-badge {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #d4a742, #8b6820);
-    color: #12061c;
+    background: linear-gradient(135deg, #cfa959, #8c6a28);
+    color: #0d0413;
     font-family: 'Cinzel Decorative', serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -388,57 +392,42 @@
   }
   .p-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 700;
-    color: #fff2b8;
+    color: #faedd0;
     line-height: 1.1;
   }
   .p-phone {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #ffd782;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #e2c27c;
     letter-spacing: 0.04em;
     margin-top: 2px;
   }
 
-  /* HOSTS & BLESSING FOOTER */
+  /* FOOTER */
   .footer-block {
-    margin-top: 10px;
-    margin-bottom: 8px;
+    margin-top: 16px;
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .hosts-line {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 23px;
     font-style: italic;
-    color: #d1bda2;
+    color: #c9b79f;
     margin-bottom: 10px;
-  }
-  .sanskrit-vow {
-    font-family: 'Rozha One', 'Devanagari Sangam MN', serif;
-    font-size: 24px;
-    color: #ffd782;
-    letter-spacing: 0.03em;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-  }
-  .vow-translation {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    font-style: italic;
-    color: #c4b098;
-    margin-top: 3px;
   }
   .dates-pill {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    color: #d4a742;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: #cfa959;
     text-transform: uppercase;
-    margin-top: 8px;
   }
 </style>
 </head>
@@ -452,32 +441,28 @@
 
   <!-- SVG Corner Ornaments -->
   <svg class="corner-ornament c-tl" viewBox="0 0 44 44" fill="none">
-    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
-    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
-    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
-    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
-    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+    <path d="M4 4h24v1.5H5.5v22.5H4V4z" fill="currentColor"/>
+    <circle cx="28" cy="4.75" r="2" fill="currentColor"/>
+    <circle cx="4.75" cy="28" r="2" fill="currentColor"/>
+    <circle cx="8" cy="8" r="2.5" fill="#faedd0"/>
   </svg>
   <svg class="corner-ornament c-tr" viewBox="0 0 44 44" fill="none">
-    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
-    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
-    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
-    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
-    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+    <path d="M4 4h24v1.5H5.5v22.5H4V4z" fill="currentColor"/>
+    <circle cx="28" cy="4.75" r="2" fill="currentColor"/>
+    <circle cx="4.75" cy="28" r="2" fill="currentColor"/>
+    <circle cx="8" cy="8" r="2.5" fill="#faedd0"/>
   </svg>
   <svg class="corner-ornament c-bl" viewBox="0 0 44 44" fill="none">
-    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
-    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
-    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
-    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
-    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+    <path d="M4 4h24v1.5H5.5v22.5H4V4z" fill="currentColor"/>
+    <circle cx="28" cy="4.75" r="2" fill="currentColor"/>
+    <circle cx="4.75" cy="28" r="2" fill="currentColor"/>
+    <circle cx="8" cy="8" r="2.5" fill="#faedd0"/>
   </svg>
   <svg class="corner-ornament c-br" viewBox="0 0 44 44" fill="none">
-    <path d="M4 4h24v2H6v22H4V4z" fill="currentColor"/>
-    <path d="M12 12h14v1.5H13.5v12.5H12V12z" fill="currentColor" opacity="0.6"/>
-    <circle cx="28" cy="5" r="2.5" fill="currentColor"/>
-    <circle cx="5" cy="28" r="2.5" fill="currentColor"/>
-    <circle cx="8" cy="8" r="3" fill="#fff2b8"/>
+    <path d="M4 4h24v1.5H5.5v22.5H4V4z" fill="currentColor"/>
+    <circle cx="28" cy="4.75" r="2" fill="currentColor"/>
+    <circle cx="4.75" cy="28" r="2" fill="currentColor"/>
+    <circle cx="8" cy="8" r="2.5" fill="#faedd0"/>
   </svg>
 
   <div class="card-content">
@@ -589,12 +574,10 @@
       </div>
     </div>
 
-    <!-- FOOTER BLESSING -->
+    <!-- FOOTER -->
     <div class="footer-block">
       <p class="hosts-line">Lovingly hosted by children, grandchildren & family</p>
-      <p class="sanskrit-vow">"यदेतद्धृदयं तव तदस्तु हृदयं मम।"</p>
-      <p class="vow-translation">"May your heart be my heart, and may my heart be yours forever."</p>
-      <p class="dates-pill">Sawarthia Sewa Sadan • Ayodhya • December 26–28, 2026</p>
+      <p class="dates-pill">Sawarthia Sewa Sadan • Ayodhya Dham • December 26–28, 2026</p>
     </div>
 
   </div>

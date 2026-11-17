@@ -19,9 +19,12 @@ const EVENT_CONFIG = {
   venueMapUrl: 'https://share.google/TCRyl7qO90pIOgZB4',
   venueWebsiteUrl: 'https://www.sawarthiasewasadan.com/Ayodhya',
   
-  // WhatsApp Host Phone Number (optional - add host's number here e.g. '919876543210')
-  whatsappNumber: '', 
-  customAudioUrl: ''
+  rsvpContacts: [
+    { name: 'Kunal', phone: '+919839019029', display: '+91 98390 19029' },
+    { name: 'Trisha', phone: '+919984134800', display: '+91 99841 34800' }
+  ],
+  customAudioUrl: 'assets/music.m4a',
+  customAudioFallbackUrl: 'assets/music.mp3'
 };
 
 // =============================================================================
@@ -79,82 +82,122 @@ function playTempleBell() {
   });
 }
 
-// Meditative Saryu Evening Raga progression
+// Instrumental: Achyutam Keshavam
 function startAmbientMusic() {
-  if (EVENT_CONFIG.customAudioUrl) {
-    if (!customAudioElement) {
-      customAudioElement = new Audio(EVENT_CONFIG.customAudioUrl);
-      customAudioElement.loop = true;
-    }
-    customAudioElement.play().catch(() => {});
-    isAudioPlaying = true;
-    updateAudioUI(true);
-    return;
+  if (!customAudioElement) {
+    customAudioElement = new Audio();
+    // Test for AAC/M4A support (Safari/iOS), fallback to MP3 (Android/desktop)
+    const canPlayM4A = customAudioElement.canPlayType('audio/mp4; codecs="mp4a.40.2"');
+    customAudioElement.src = (canPlayM4A !== '') ? EVENT_CONFIG.customAudioUrl : EVENT_CONFIG.customAudioFallbackUrl;
+    customAudioElement.loop = true;
+    customAudioElement.volume = 0.65;
+    customAudioElement.preload = 'auto';
+
+    // Loop fallback
+    customAudioElement.addEventListener('ended', () => {
+      customAudioElement.currentTime = 0;
+      customAudioElement.play().catch(() => {});
+    });
   }
 
+  const playPromise = customAudioElement.play();
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      isAudioPlaying = true;
+      updateAudioUI(true);
+    }).catch(() => {
+      // Fallback to synthesized Achyutam Keshavam flute melody
+      playSynthesizedRaga();
+    });
+  }
+}
+
+// Fallback: Synthesized Bansuri Flute melody of "Achyutam Keshavam"
+function playSynthesizedRaga() {
   const ctx = getAudioContext();
   if (!ctx) return;
 
   isAudioPlaying = true;
   updateAudioUI(true);
 
-  const sacredPatterns = [
-    [293.66, 369.99, 440.00, 587.33], // D, F#, A, D
-    [246.94, 293.66, 369.99, 440.00], // B, D, F#, A
-    [220.00, 293.66, 369.99, 440.00], // A, D, F#, A
-    [277.18, 369.99, 440.00, 554.37]  // C#, F#, A, C#
+  // Note-by-note Achyutam Keshavam in D-major (Bansuri flute scale)
+  const achyutamPhrases = [
+    // Phrase 1: "Ach-yu-tam Ke-sha-vam"
+    [{ f: 440.00, d: 0.35 }, { f: 440.00, d: 0.35 }, { f: 440.00, d: 0.45 }, { f: 493.88, d: 0.45 }, { f: 440.00, d: 0.8 }],
+    // Phrase 2: "Ra-ma Na-ra-ya-nam"
+    [{ f: 392.00, d: 0.35 }, { f: 369.99, d: 0.35 }, { f: 392.00, d: 0.5 }, { f: 440.00, d: 0.9 }],
+    // Phrase 3: "Krish-na Da-mo-da-ram"
+    [{ f: 369.99, d: 0.35 }, { f: 369.99, d: 0.35 }, { f: 369.99, d: 0.45 }, { f: 392.00, d: 0.45 }, { f: 369.99, d: 0.8 }],
+    // Phrase 4: "Va-su-de-vam Ha-rim"
+    [{ f: 329.63, d: 0.35 }, { f: 293.66, d: 0.35 }, { f: 329.63, d: 0.5 }, { f: 369.99, d: 0.9 }],
+    // Phrase 5: "Ja-na-ki Na-ya-kam"
+    [{ f: 369.99, d: 0.35 }, { f: 369.99, d: 0.35 }, { f: 392.00, d: 0.45 }, { f: 369.99, d: 0.8 }],
+    // Phrase 6: "Ram-chan-dram Bha-je"
+    [{ f: 329.63, d: 0.4 }, { f: 293.66, d: 0.4 }, { f: 329.63, d: 0.5 }, { f: 293.66, d: 1.2 }]
   ];
 
-  let patternIdx = 0;
-  function playNextSacredPhrase() {
+  let phraseIdx = 0;
+  function playNextPhrase() {
     if (!isAudioPlaying) return;
-    const notes = sacredPatterns[patternIdx % sacredPatterns.length];
-    patternIdx++;
+    const phrase = achyutamPhrases[phraseIdx % achyutamPhrases.length];
+    phraseIdx++;
 
-    notes.forEach((freq, idx) => {
+    let accumulatedTime = 0;
+    phrase.forEach(note => {
       setTimeout(() => {
         if (!isAudioPlaying) return;
+        const now = ctx.currentTime;
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
 
+        // Warm bamboo flute / bansuri timbre using triangle wave
         osc.type = 'triangle';
-        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        osc.frequency.setValueAtTime(note.f, now);
 
-        gain.gain.setValueAtTime(0, ctx.currentTime);
-        gain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 0.25);
-        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 3.4);
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.06, now + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + note.d + 0.8);
 
         osc.connect(gain);
         gain.connect(ctx.destination);
 
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 3.6);
-      }, idx * 220);
+        osc.start(now);
+        osc.stop(now + note.d + 0.9);
+      }, accumulatedTime * 1000);
+
+      accumulatedTime += (note.d + 0.15);
     });
   }
 
-  playNextSacredPhrase();
-  ambientInterval = setInterval(playNextSacredPhrase, 4600);
+  playNextPhrase();
+  ambientInterval = setInterval(playNextPhrase, 3800);
 }
 
 function stopAmbientMusic() {
   isAudioPlaying = false;
+  if (customAudioElement) {
+    customAudioElement.pause();
+  }
   if (ambientInterval) {
     clearInterval(ambientInterval);
     ambientInterval = null;
-  }
-  if (customAudioElement) {
-    customAudioElement.pause();
   }
   updateAudioUI(false);
 }
 
 function updateAudioUI(playing) {
+  const btn = document.getElementById('audioToggleBtn');
   const label = document.getElementById('musicStatusText');
   const icon = document.getElementById('musicIcon');
-  if (label && icon) {
-    label.textContent = playing ? 'Sound On' : 'Sound Off';
-    icon.style.opacity = playing ? '1' : '0.4';
+
+  if (btn) {
+    btn.classList.toggle('playing', playing);
+  }
+  if (label) {
+    label.textContent = playing ? 'Music On' : 'Music';
+  }
+  if (icon) {
+    icon.style.opacity = playing ? '1' : '0.5';
   }
 }
 

@@ -219,6 +219,24 @@ img, svg {
   border-color: var(--gold-300);
 }
 
+.audio-btn.playing {
+  border-color: var(--marigold-bright);
+  background: rgba(38, 22, 54, 0.95);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 0 16px rgba(245, 158, 11, 0.45);
+}
+
+.audio-btn.playing .bell-icon {
+  animation: bell-chime 1.8s infinite ease-in-out;
+  color: var(--marigold-bright);
+}
+
+@keyframes bell-chime {
+  0%, 100% { transform: rotate(0); }
+  10%, 30% { transform: rotate(14deg); }
+  20%, 40% { transform: rotate(-14deg); }
+  50% { transform: rotate(0); }
+}
+
 /* ==========================================================================
    Main Invitation Layout
    ========================================================================== */
@@ -1060,16 +1078,141 @@ img, svg {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
 }
 
-.whatsapp-rsvp-card {
+.rsvp-contacts-section {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .rsvp-choice-title {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--marigold-bright);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.rsvp-choice-subtitle {
+  font-size: 0.82rem;
+  color: var(--lotus-pink);
+  margin-bottom: 1rem;
+}
+
+.rsvp-contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 480px) {
+  .rsvp-contacts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.rsvp-contact-card {
+  background: rgba(22, 13, 34, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 12px;
+  padding: 0.95rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-avatar {
+  inline-size: 38px;
+  block-size: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--kesar-light) 0%, var(--marigold-gold) 100%);
+  color: #12091c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--marigold-bright);
+  line-height: 1.2;
+}
+
+.contact-phone {
+  font-size: 0.82rem;
+  color: var(--text-chandan);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.contact-phone:hover {
+  color: var(--gold-300);
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.btn-whatsapp-sm {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.25);
+  transition: transform 0.18s, box-shadow 0.18s;
+  min-block-size: 40px;
+}
+
+.btn-whatsapp-sm:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-call-sm {
+  background: rgba(38, 22, 54, 0.85);
+  color: var(--text-chandan);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.18s, border-color 0.18s, color 0.18s;
+  min-block-size: 40px;
+}
+
+.btn-call-sm:hover {
+  border-color: var(--marigold-bright);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .rsvp-divider {

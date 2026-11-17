@@ -575,71 +575,7 @@ img, svg {
 }
 
 /* ==========================================================================
-   Section 2: Golden Jubilee Invitation Card Showcase
-   ========================================================================== */
-
-.card-showcase-section {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-.card-preview-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  width: 100%;
-}
-
-.card-frame-outer {
-  width: 100%;
-  max-width: 440px;
-  border-radius: 18px;
-  padding: 8px;
-  background: linear-gradient(135deg, rgba(220, 180, 85, 0.45), rgba(48, 20, 68, 0.8), rgba(220, 180, 85, 0.35));
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 30px rgba(245, 158, 11, 0.18);
-  border: 1px solid rgba(245, 205, 110, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-frame-outer:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 36px rgba(245, 158, 11, 0.28);
-}
-
-.invitation-card-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-}
-
-.card-action-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 440px;
-}
-
-.btn-download-card {
-  flex: 1;
-  min-width: 170px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 0.84rem;
-  font-weight: 600;
-  padding: 0.75rem 1.15rem;
-  text-decoration: none;
-}
-
-/* ==========================================================================
-   Section 3: 3-Day Itinerary Tabs (Crisp & Concise)
+   Section 2: 3-Day Itinerary Tabs (Crisp & Concise)
    ========================================================================== */
 
 .day-tabs-nav {

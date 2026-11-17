@@ -1,0 +1,1413 @@
+/* ==========================================================================
+   Anita & Vimal — 50th Golden Anniversary (Ayodhya Dham)
+   Sacred Temple Aesthetic • Cinematic Mobile-First UI/UX Architecture
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     Sacred Ayodhya Color Palette
+     ------------------------------------------------------------------------ */
+  --bg-deep: #0c0813;              /* Twilight Temple Plum / Midnight Indigo */
+  --bg-surface: #140d20;           /* Warm Sandalwood Surface */
+  --bg-card: rgba(23, 16, 36, 0.85); /* Deep Silk Glass */
+  --bg-card-border: rgba(229, 169, 60, 0.35); /* Brass & Gold Inlay Border */
+  --bg-glass: rgba(18, 12, 28, 0.9);
+
+  /* Sacred Saffron (Kesariya) & Agni Glow */
+  --kesar-primary: #e65100;
+  --kesar-light: #ff7d26;
+  --kesar-glow: rgba(230, 81, 0, 0.42);
+
+  /* Auspicious Marigold (Genda Phool) & Haldi */
+  --marigold-gold: #f59e0b;
+  --marigold-bright: #fbbf24;
+  --marigold-glow: rgba(245, 158, 11, 0.38);
+
+  /* Temple Brass & Liquid Gold Foil */
+  --gold-300: #fff2ad;
+  --gold-400: #eed582;
+  --gold-500: #d4af37;
+  --gold-600: #b58d24;
+  --gold-700: #886512;
+  --gold-glow: rgba(212, 175, 55, 0.45);
+
+  /* Sacred Kumkum / Alta Vermilion */
+  --kumkum-red: #8e1525;
+  --kumkum-deep: #660e1a;
+
+  /* Lotus & Lily Petal Blush */
+  --lotus-pink: #f7c5d2;
+  --lotus-blush: #e28ca0;
+
+  /* Sandalwood (Chandan) Text */
+  --text-primary: #fcfbf7;
+  --text-secondary: #e5dfd3;
+  --text-muted: #ad9e8e;
+  --text-chandan: #f6ebd6;
+
+  --whatsapp-green: #25d366;
+
+  /* Radiant Sacred Gradients */
+  --sacred-gold-gradient: linear-gradient(135deg, #fff5b8 0%, #f59e0b 35%, #d4af37 70%, #9a6f14 100%);
+  --gold-foil-text: linear-gradient(120deg, #fff9d2 10%, #f59e0b 35%, #d4af37 60%, #9e7315 85%, #fff2ad 100%);
+  --kesar-fire-gradient: linear-gradient(135deg, #ff9800 0%, #e65100 50%, #b71c1c 100%);
+
+  /* Typography */
+  --font-display: 'Cinzel Decorative', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-devanagari: 'Rozha One', Georgia, serif;
+
+  /* Touch Target & Mobile Safe Insets */
+  --target-size: 44px;
+  --safe-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  --safe-top: max(1rem, env(safe-area-inset-top, 0px));
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 35%, rgba(230, 81, 0, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 65%, rgba(142, 21, 37, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(212, 175, 55, 0.12) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+@media (pointer: coarse) {
+  :root {
+    --target-size: 48px;
+  }
+}
+
+:where(button, select, textarea, input:not([type="checkbox"], [type="radio"]), [role="button"], a.btn) {
+  min-block-size: var(--target-size);
+  min-inline-size: var(--target-size);
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+p, li, blockquote {
+  text-wrap: pretty;
+}
+
+img, svg {
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+/* Graphic SVG Icon Helpers */
+.graphic-icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.bell-icon {
+  inline-size: 16px;
+  block-size: 16px;
+  stroke-width: 2;
+  color: var(--gold-300);
+}
+
+.diya-mini {
+  inline-size: 14px;
+  block-size: 14px;
+  color: var(--marigold-bright);
+}
+
+.diya-tiny {
+  inline-size: 13px;
+  block-size: 13px;
+  color: var(--marigold-bright);
+}
+
+.ornament-diya-svg {
+  inline-size: 20px;
+  block-size: 20px;
+  color: var(--marigold-gold);
+  filter: drop-shadow(0 0 6px var(--marigold-glow));
+}
+
+.btn-svg {
+  inline-size: 16px;
+  block-size: 16px;
+  stroke-width: 2;
+  fill: none;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* Canvas Floating Diyas & Sacred Embers */
+#particleCanvas {
+  position: fixed;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Sound Atmosphere Control
+   ========================================================================== */
+
+.audio-control {
+  position: fixed;
+  top: max(0.85rem, var(--safe-top));
+  right: max(0.85rem, env(safe-area-inset-right, 0px));
+  z-index: 100;
+}
+
+.audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(20, 13, 32, 0.92);
+  border: 1px solid var(--marigold-gold);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  color: var(--gold-300);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 12px var(--marigold-glow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.audio-btn:hover {
+  transform: scale(1.04);
+  border-color: var(--gold-300);
+}
+
+/* ==========================================================================
+   Main Invitation Layout
+   ========================================================================== */
+
+.main-invite {
+  position: relative;
+  z-index: 2;
+  max-inline-size: 640px;
+  margin: 0 auto;
+  padding: 0 1rem calc(5.5rem + var(--safe-bottom));
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-invite > section,
+.main-invite > footer {
+  inline-size: 100%;
+}
+
+/* Section Dividers */
+.section-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 2.75rem auto 1.25rem;
+  max-inline-size: 220px;
+  color: var(--marigold-gold);
+}
+
+.ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--marigold-gold), transparent);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-tag {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--marigold-bright);
+  margin-bottom: 0.3rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 1.4rem + 1.8vw, 2.4rem);
+  background: var(--gold-foil-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero-section {
+  min-block-size: 88dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.25rem 0 1.5rem;
+  position: relative;
+  inline-size: 100%;
+}
+
+.hero-content {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cinematic-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.golden-radial-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  inline-size: 300px;
+  block-size: 300px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(230, 81, 0, 0.1) 45%, transparent 70%);
+  filter: blur(35px);
+}
+
+.sacred-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: var(--font-devanagari);
+  font-size: 0.85rem;
+  color: var(--marigold-bright);
+  margin-bottom: 0.85rem;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+  flex-wrap: wrap;
+}
+
+.sacred-divider-dot {
+  color: var(--gold-500);
+  margin: 0 0.2rem;
+}
+
+.golden-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 1rem;
+  border: 1px solid var(--marigold-gold);
+  border-radius: 9999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--gold-300);
+  background: rgba(245, 158, 11, 0.1);
+  margin-bottom: 1rem;
+}
+
+.cinematic-kicker {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--lotus-pink);
+  margin-bottom: 0.4rem;
+}
+
+.grandparents-names {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 1.7rem + 3.8vw, 3.8rem);
+  line-height: 1.15;
+  background: var(--gold-foil-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  filter: drop-shadow(0 3px 15px rgba(0, 0, 0, 0.85));
+}
+
+.name-amp {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--marigold-bright);
+  margin: 0 0.1em;
+}
+
+.anniversary-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-chandan);
+  margin-bottom: 0.3rem;
+}
+
+.golden-anniversary-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 1.25rem + 1.8vw, 2.3rem);
+  color: var(--marigold-bright);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.years-counter {
+  font-size: 0.84rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lotus-pink);
+  margin-bottom: 1.5rem;
+}
+
+/* Holy Shloka Box */
+.holy-shloka-box {
+  background: linear-gradient(135deg, rgba(38, 22, 54, 0.7) 0%, rgba(22, 13, 34, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-left: 3px solid var(--kesar-light);
+  border-right: 3px solid var(--kesar-light);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  margin: 0 auto 1.75rem;
+  max-inline-size: 420px;
+  inline-size: 100%;
+}
+
+.holy-shloka-sanskrit {
+  font-family: var(--font-devanagari);
+  font-size: 1.05rem;
+  color: var(--marigold-bright);
+  margin-bottom: 0.25rem;
+}
+
+.holy-shloka-meaning {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--text-chandan);
+  line-height: 1.4;
+}
+
+/* Live Countdown Card */
+.countdown-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 16px;
+  padding: 1rem 0.85rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 16px rgba(245, 158, 11, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin: 0 auto 1.75rem;
+  margin-inline: auto;
+  inline-size: 100%;
+  max-inline-size: 340px;
+  box-sizing: border-box;
+}
+
+.countdown-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--marigold-bright);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.2rem, 1.2vw, 0.5rem);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-inline-size: 0;
+  text-align: center;
+}
+
+.time-val {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 1.15rem + 1.2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--gold-300);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.time-unit {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lotus-pink);
+  margin-top: 2px;
+  text-align: center;
+}
+
+.time-sep {
+  font-size: 1.25rem;
+  color: var(--marigold-gold);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.scroll-down-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  color: var(--marigold-bright);
+  text-decoration: none;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+  margin: 0.4rem auto 0;
+  text-align: center;
+}
+
+.scroll-down-indicator:hover {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+.scroll-arrow {
+  animation: bounce-down 2s infinite ease-in-out;
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ==========================================================================
+   Section 2: 3-Day Itinerary Tabs (Crisp & Concise)
+   ========================================================================== */
+
+.day-tabs-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  background: rgba(20, 13, 32, 0.85);
+  padding: 0.35rem;
+  border-radius: 12px;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+
+.day-tab-btn {
+  background: none;
+  border: none;
+  border-radius: 9px;
+  padding: 0.55rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  color: var(--text-chandan);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  min-block-size: var(--target-size);
+}
+
+.tab-day-num {
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.tab-day-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--lotus-pink);
+  white-space: nowrap;
+}
+
+.day-tab-btn.active {
+  background: var(--sacred-gold-gradient);
+  color: #12091c;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+
+.day-tab-btn.active .tab-day-num {
+  color: #12091c;
+}
+
+.day-tab-btn.active .tab-day-label {
+  color: #4a2800;
+  font-weight: 700;
+}
+
+.day-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.day-card-header {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.sacred-header-glow {
+  border: 1px solid rgba(230, 81, 0, 0.5);
+  background: linear-gradient(135deg, rgba(46, 24, 40, 0.9) 0%, rgba(26, 14, 38, 0.9) 100%);
+}
+
+.day-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--marigold-bright);
+  border: 1px solid var(--marigold-gold);
+  border-radius: 9999px;
+  padding: 0.2rem 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.golden-badge-glow {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: var(--marigold-bright);
+}
+
+.day-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+}
+
+.timeline-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 0.95rem;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s ease;
+}
+
+.schedule-item:hover {
+  transform: translateY(-1px);
+}
+
+.highlight-item {
+  border-left: 3px solid var(--marigold-gold);
+  background: linear-gradient(135deg, rgba(38, 24, 52, 0.9) 0%, rgba(22, 14, 34, 0.9) 100%);
+}
+
+.sacred-item {
+  border-left: 3px solid var(--kesar-light);
+  background: linear-gradient(135deg, rgba(58, 28, 20, 0.85) 0%, rgba(26, 14, 38, 0.92) 100%);
+}
+
+.item-time {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--marigold-bright);
+  min-inline-size: 68px;
+  flex-shrink: 0;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.15rem;
+}
+
+.item-icon {
+  inline-size: 15px;
+  block-size: 15px;
+  color: var(--gold-400);
+}
+
+.agni-icon {
+  color: var(--kesar-light);
+}
+
+.ring-icon {
+  color: var(--marigold-bright);
+}
+
+.item-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.item-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.itinerary-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin-top: 1.35rem;
+}
+
+@media (min-width: 440px) {
+  .itinerary-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   Section 3: Dedicated Venue Card
+   ========================================================================== */
+
+.venue-card {
+  background: linear-gradient(135deg, rgba(34, 18, 48, 0.92) 0%, rgba(20, 11, 32, 0.95) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem 1.35rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+.venue-header-box {
+  text-align: center;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+  padding-bottom: 0.9rem;
+  margin-bottom: 1.15rem;
+}
+
+.venue-main-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 1.2rem + 1.2vw, 1.85rem);
+  background: var(--gold-foil-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+}
+
+.venue-sub-tag {
+  font-size: 0.84rem;
+  color: var(--lotus-pink);
+}
+
+.venue-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.35rem;
+}
+
+.venue-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.venue-row-icon {
+  inline-size: 18px;
+  block-size: 18px;
+  color: var(--marigold-bright);
+  margin-top: 2px;
+}
+
+.venue-row-text strong {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.venue-row-text p {
+  font-size: 0.85rem;
+  color: var(--text-chandan);
+  line-height: 1.45;
+}
+
+.venue-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+@media (min-width: 440px) {
+  .venue-actions-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   Section 4: Weather & Packing Advisory
+   ========================================================================== */
+
+.weather-card {
+  background: linear-gradient(135deg, rgba(28, 17, 40, 0.88) 0%, rgba(18, 11, 28, 0.92) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  border-radius: 16px;
+  padding: 1.35rem 1.25rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.weather-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.weather-stat-box {
+  background: rgba(14, 9, 22, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 12px;
+  padding: 0.95rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.daytime-box {
+  border-left: 3px solid var(--marigold-bright);
+}
+
+.nighttime-box {
+  border-left: 3px solid #90caf9;
+}
+
+.weather-svg {
+  inline-size: 26px;
+  block-size: 26px;
+}
+
+.sun-svg {
+  color: var(--marigold-bright);
+}
+
+.moon-svg {
+  color: #90caf9;
+}
+
+.stat-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lotus-pink);
+}
+
+.stat-temp {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.stat-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.attire-advisory-box {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  background: rgba(230, 81, 0, 0.1);
+  border: 1px solid rgba(230, 81, 0, 0.3);
+  border-radius: 11px;
+  padding: 0.95rem 1rem;
+}
+
+.advisory-svg {
+  inline-size: 22px;
+  block-size: 22px;
+  color: var(--kesar-light);
+  margin-top: 2px;
+}
+
+.advisory-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--marigold-bright);
+  margin-bottom: 0.2rem;
+}
+
+.advisory-text {
+  font-size: 0.84rem;
+  color: var(--text-chandan);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Section 5: Ayodhya Significance
+   ========================================================================== */
+
+.destination-card {
+  background: linear-gradient(135deg, rgba(38, 20, 48, 0.85) 0%, rgba(22, 12, 34, 0.9) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.sacred-tag {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--marigold-bright);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.destination-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  background: var(--gold-foil-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.destination-text {
+  font-size: 0.9rem;
+  color: var(--text-chandan);
+  line-height: 1.5;
+  max-inline-size: 460px;
+  margin: 0 auto 1rem;
+}
+
+.ayodhya-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.highlight-pill {
+  font-size: 0.74rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--gold-300);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.7rem 1.15rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  border: 1px solid transparent;
+  outline: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--sacred-gold-gradient);
+  color: #12091c;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(26, 16, 42, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: var(--gold-300);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--marigold-bright);
+  background: rgba(38, 24, 58, 0.95);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  inline-size: 100%;
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus-visible {
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Section 6: RSVP Section
+   ========================================================================== */
+
+.rsvp-container {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 16px;
+  padding: 1.5rem 1.35rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+}
+
+.whatsapp-rsvp-card {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.rsvp-choice-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--marigold-bright);
+  margin-bottom: 0.65rem;
+}
+
+.rsvp-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.rsvp-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(245, 158, 11, 0.22);
+}
+
+.rsvp-divider span {
+  position: relative;
+  background: var(--bg-surface);
+  padding: 0 0.85rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--marigold-gold);
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-chandan);
+}
+
+.required {
+  color: #ff8585;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(15, 10, 24, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  border-radius: 9px;
+  padding: 0.72rem 0.9rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--marigold-bright);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.field-error {
+  font-size: 0.74rem;
+  color: #ff8585;
+}
+
+.submit-rsvp-btn {
+  inline-size: 100%;
+  padding: 0.85rem 1.25rem;
+  margin-top: 0.3rem;
+}
+
+.form-success-msg {
+  background: rgba(30, 60, 35, 0.5);
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  color: #a4f5b8;
+  padding: 0.95rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: 0.75rem;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Section 7: Blessings Wall
+   ========================================================================== */
+
+.blessings-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.blessing-form {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 14px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.form-row input {
+  flex: 1;
+  background: rgba(15, 10, 24, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  border-radius: 9px;
+  padding: 0.65rem 0.85rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+}
+
+.send-blessing-btn {
+  padding: 0.65rem 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.blessing-form textarea {
+  background: rgba(15, 10, 24, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  border-radius: 9px;
+  padding: 0.7rem 0.85rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  resize: none;
+}
+
+.blessings-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.empty-blessings-note {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--lotus-pink);
+  padding: 1.25rem 1rem;
+  background: rgba(22, 13, 34, 0.45);
+  border: 1px dashed rgba(245, 158, 11, 0.25);
+  border-radius: 12px;
+  margin: 0;
+}
+
+.blessing-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-left: 3px solid var(--kesar-light);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.blessing-quote {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--text-chandan);
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.blessing-sender {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--marigold-bright);
+  font-style: normal;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.cinematic-footer {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--marigold-bright);
+  margin-bottom: 0.25rem;
+}
+
+.footer-hosts {
+  font-size: 0.85rem;
+  color: var(--lotus-pink);
+  margin-bottom: 0.85rem;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+
+/* ==========================================================================
+   Sticky Mobile Action Bar (Clean Vector Graphic SVGs)
+   ========================================================================== */
+
+.mobile-sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  background: rgba(14, 9, 22, 0.95);
+  border-top: 1px solid rgba(245, 158, 11, 0.32);
+  padding-bottom: var(--safe-bottom);
+  padding-top: 0.45rem;
+  padding-left: max(0.5rem, env(safe-area-inset-left, 0px));
+  padding-right: max(0.5rem, env(safe-area-inset-right, 0px));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.sticky-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: var(--text-chandan);
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  min-inline-size: 52px;
+  min-block-size: 44px;
+  transition: color 0.18s, transform 0.18s;
+}
+
+.nav-svg {
+  inline-size: 18px;
+  block-size: 18px;
+  color: var(--text-chandan);
+}
+
+.sticky-nav-item:hover,
+.sticky-nav-item:active {
+  color: var(--marigold-bright);
+}
+
+.sticky-nav-item:hover .nav-svg,
+.sticky-nav-item:active .nav-svg {
+  color: var(--marigold-bright);
+}
+
+.sticky-nav-item.highlight-cta {
+  background: var(--sacred-gold-gradient);
+  color: #12091c;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
+  padding: 0.3rem 0.95rem;
+  border-radius: 9999px;
+  transform: translateY(-3px);
+}
+
+.sticky-nav-item.highlight-cta .nav-svg {
+  color: #12091c;
+}
+
+/* ==========================================================================
+   Scroll-Driven Animations & Reveal Effects
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes scroll-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .reveal-on-scroll {
+      animation: scroll-fade-in linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+  }
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

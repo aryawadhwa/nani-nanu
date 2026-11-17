@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+*.log
+qr-code.png
+.user_uploaded/

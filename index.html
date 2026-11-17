@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Anita & Vimal | 50th Golden Anniversary — Ayodhya</title>
+  <meta name="description" content="Celebrating 50 Sacred Years of Anita & Vimal at Sawarthia Sewa Sadan, Ayodhya. December 26–28, 2026.">
+  
+  <!-- Open Graph Meta Tags for WhatsApp Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Anita & Vimal — 50th Golden Anniversary | Ayodhya">
+  <meta property="og:description" content="December 26–28 • Sawarthia Sewa Sadan, Ayodhya. 3 Days of Celebration, Wedding Programme & Gala Dinner.">
+  <meta property="og:image" content="assets/invite-card.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Mobile Theme Color -->
+  <meta name="theme-color" content="#0c0813">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Sacred River Diyas & Temple Gold Embers Canvas -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- Temple Sound Control (Graphic Icon) -->
+  <aside class="audio-control" aria-label="Sound player">
+    <button id="audioToggleBtn" class="audio-btn" type="button" aria-label="Toggle sacred temple bells and celebratory music" title="Toggle Sound">
+      <svg class="graphic-icon bell-icon" id="musicIcon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        <circle cx="12" cy="2" r="1"/>
+      </svg>
+      <span class="music-label" id="musicStatusText">Sound</span>
+    </button>
+  </aside>
+
+  <!-- MAIN INVITATION CONTAINER -->
+  <main id="mainInvite" class="main-invite">
+    
+    <!-- SECTION 1: HERO / THE GRAND ANNOUNCEMENT -->
+    <section class="hero-section" id="hero">
+      <div class="cinematic-backdrop" aria-hidden="true">
+        <div class="golden-radial-glow"></div>
+      </div>
+
+      <header class="hero-content">
+        <!-- Auspicious Invocation Header -->
+        <div class="sacred-banner">
+          <span class="sacred-shloka-main">॥ श्री गणेशाय नमः ॥</span>
+          <span class="sacred-divider-dot">•</span>
+          <span class="sacred-shloka-main">॥ श्री जानकीवल्लभो विजयते ॥</span>
+        </div>
+
+        <div class="golden-badge">
+          <svg class="graphic-icon diya-mini" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2c0 2-2 3.5-2 5.5a2 2 0 1 0 4 0C14 5.5 12 4 12 2z" fill="currentColor"/>
+            <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          <span>1976 — 2026 • AYODHYA</span>
+          <svg class="graphic-icon diya-mini" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2c0 2-2 3.5-2 5.5a2 2 0 1 0 4 0C14 5.5 12 4 12 2z" fill="currentColor"/>
+            <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+        </div>
+
+        <p class="cinematic-kicker">Together with Family</p>
+        
+        <h1 class="grandparents-names">
+          <span class="name-first">Anita</span>
+          <span class="name-amp">&</span>
+          <span class="name-second">Vimal</span>
+        </h1>
+
+        <p class="anniversary-subtitle">Cordially invite you to their</p>
+        
+        <div class="golden-title-wrap">
+          <h2 class="golden-anniversary-title">50th Golden Anniversary</h2>
+          <p class="years-counter">Sawarthia Sewa Sadan • Ayodhya</p>
+        </div>
+
+        <!-- Sacred Ayodhya Sanskrit Blessing -->
+        <div class="holy-shloka-box">
+          <p class="holy-shloka-sanskrit">"यदेतद्धृदयं तव तदस्तु हृदयं मम।"</p>
+          <p class="holy-shloka-meaning">"May your heart be my heart, and may my heart be yours forever."</p>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-card" id="countdownCard">
+          <div class="countdown-title">
+            <svg class="graphic-icon diya-tiny" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2c0 2-2 3.5-2 5.5a2 2 0 1 0 4 0C14 5.5 12 4 12 2z" fill="currentColor"/>
+              <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            <span>Celebrations Begin In</span>
+            <svg class="graphic-icon diya-tiny" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2c0 2-2 3.5-2 5.5a2 2 0 1 0 4 0C14 5.5 12 4 12 2z" fill="currentColor"/>
+              <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div class="countdown-grid" id="countdownGrid" aria-live="polite">
+            <div class="time-box">
+              <span class="time-val" id="daysVal">38</span>
+              <span class="time-unit">Days</span>
+            </div>
+            <span class="time-sep">:</span>
+            <div class="time-box">
+              <span class="time-val" id="hoursVal">14</span>
+              <span class="time-unit">Hours</span>
+            </div>
+            <span class="time-sep">:</span>
+            <div class="time-box">
+              <span class="time-val" id="minsVal">50</span>
+              <span class="time-unit">Mins</span>
+            </div>
+            <span class="time-sep">:</span>
+            <div class="time-box">
+              <span class="time-val" id="secsVal">00</span>
+              <span class="time-unit">Secs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll down prompt -->
+        <a href="#itinerary" class="scroll-down-indicator" aria-label="View the 3-day itinerary">
+          <span class="scroll-text">View Itinerary</span>
+          <svg class="scroll-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 10l5 5 5-5"/>
+          </svg>
+        </a>
+      </header>
+    </section>
+
+    <!-- SECTION 2: CELEBRATION ITINERARY (AYODHYA 3-DAY SCHEDULE) -->
+    <section class="itinerary-section" id="itinerary">
+      <div class="section-ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <svg class="graphic-icon ornament-diya-svg" viewBox="0 0 24 24">
+          <path d="M12 2c0 2.2-2 4-2 6a2 2 0 1 0 4 0C14 6 12 4.2 12 2z" fill="currentColor"/>
+          <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="ornament-line"></span>
+      </div>
+      
+      <div class="section-header">
+        <p class="section-tag">Celebration Itinerary</p>
+        <h2 class="section-title">Three Days of Joy</h2>
+      </div>
+
+      <!-- Day Navigation Tabs (Mobile Screen Optimized) -->
+      <div class="day-tabs-nav" role="tablist" aria-label="Itinerary Days">
+        <button class="day-tab-btn active" role="tab" aria-selected="true" aria-controls="day-26" id="tab-26">
+          <span class="tab-day-num">Dec 26</span>
+          <span class="tab-day-label">Welcome & Sangeet</span>
+        </button>
+        <button class="day-tab-btn" role="tab" aria-selected="false" aria-controls="day-27" id="tab-27">
+          <span class="tab-day-num">Dec 27</span>
+          <span class="tab-day-label">Wedding & Gala</span>
+        </button>
+        <button class="day-tab-btn" role="tab" aria-selected="false" aria-controls="day-28" id="tab-28">
+          <span class="tab-day-num">Dec 28</span>
+          <span class="tab-day-label">Farewell</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="day-panels-wrap">
+
+        <!-- DAY 1: DECEMBER 26 -->
+        <div class="day-panel active" id="day-26" role="tabpanel" aria-labelledby="tab-26">
+          <div class="day-card-header">
+            <span class="day-badge">Day 1 • Friday</span>
+            <h3 class="day-card-title">Welcome & Sangeet</h3>
+          </div>
+
+          <div class="timeline-items-list">
+            <div class="schedule-item">
+              <time class="item-time">2:00 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                    <line x1="6" y1="1" x2="6" y2="4"/>
+                    <line x1="10" y1="1" x2="10" y2="4"/>
+                    <line x1="14" y1="1" x2="14" y2="4"/>
+                  </svg>
+                  <h4 class="item-title">Welcome Lunch</h4>
+                </div>
+                <p class="item-desc">Arrivals & family luncheon</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <time class="item-time">4:30 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                    <line x1="6" y1="2" x2="6" y2="4"/>
+                    <line x1="10" y1="2" x2="10" y2="4"/>
+                    <line x1="14" y1="2" x2="14" y2="4"/>
+                  </svg>
+                  <h4 class="item-title">High Tea</h4>
+                </div>
+                <p class="item-desc">Tea & refreshments</p>
+              </div>
+            </div>
+
+            <div class="schedule-item highlight-item">
+              <time class="item-time">5:30 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 18V5l12-2v13"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <circle cx="18" cy="16" r="3"/>
+                  </svg>
+                  <h4 class="item-title">Evening Dance & Sangeet</h4>
+                </div>
+                <p class="item-desc">Music, dance & family performances</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <time class="item-time">8:30 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9z"/>
+                    <path d="M3 16h18"/>
+                    <circle cx="12" cy="19" r="1"/>
+                  </svg>
+                  <h4 class="item-title">Dinner</h4>
+                </div>
+                <p class="item-desc">Evening banquet feast</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 2: DECEMBER 27 (THE MAIN CELEBRATION DAY) -->
+        <div class="day-panel" id="day-27" role="tabpanel" aria-labelledby="tab-27" hidden>
+          <div class="day-card-header sacred-header-glow">
+            <span class="day-badge golden-badge-glow">Day 2 • Saturday</span>
+            <h3 class="day-card-title">Wedding & Gala Dinner</h3>
+          </div>
+
+          <div class="timeline-items-list">
+            <div class="schedule-item">
+              <time class="item-time">10:00 AM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"/>
+                    <circle cx="12" cy="12" r="4"/>
+                  </svg>
+                  <h4 class="item-title">Breakfast</h4>
+                </div>
+                <p class="item-desc">Morning breakfast</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <time class="item-time">2:00 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9z"/>
+                    <path d="M3 16h18"/>
+                  </svg>
+                  <h4 class="item-title">Lunch</h4>
+                </div>
+                <p class="item-desc">Festive lunch spread</p>
+              </div>
+            </div>
+
+            <div class="schedule-item highlight-item wedding-milestone-item">
+              <time class="item-time">6:00 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon ring-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="9" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                    <circle cx="15" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M9 9l3-4 3 4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                  </svg>
+                  <h4 class="item-title">Wedding Programme</h4>
+                </div>
+                <p class="item-desc">Garland ceremony & anniversary vows</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <time class="item-time">8:00 PM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 22h8"/>
+                    <path d="M12 15v7"/>
+                    <path d="M12 15a5 5 0 0 0 5-5V3H7v7a5 5 0 0 0 5 5z"/>
+                  </svg>
+                  <h4 class="item-title">Gala Dinner & Toast</h4>
+                </div>
+                <p class="item-desc">Golden anniversary banquet & cake cutting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 3: DECEMBER 28 -->
+        <div class="day-panel" id="day-28" role="tabpanel" aria-labelledby="tab-28" hidden>
+          <div class="day-card-header">
+            <span class="day-badge">Day 3 • Sunday</span>
+            <h3 class="day-card-title">Farewell</h3>
+          </div>
+
+          <div class="timeline-items-list">
+            <div class="schedule-item">
+              <time class="item-time">9:00 AM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"/>
+                    <circle cx="12" cy="12" r="4"/>
+                  </svg>
+                  <h4 class="item-title">Farewell Breakfast</h4>
+                </div>
+                <p class="item-desc">Morning breakfast with Anita & Vimal</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <time class="item-time">11:00 AM</time>
+              <div class="item-content">
+                <div class="item-title-row">
+                  <svg class="graphic-icon item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="6" width="18" height="15" rx="2"/>
+                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                  </svg>
+                  <h4 class="item-title">Checkout & Departures</h4>
+                </div>
+                <p class="item-desc">Departures with golden memories</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Action Buttons for Calendar -->
+      <div class="itinerary-actions reveal-on-scroll">
+        <button type="button" class="btn btn-primary" id="addToCalBtn">
+          <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <span>Add to Calendar</span>
+        </button>
+        <a href="#venue" class="btn btn-secondary">
+          <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>View Venue & Map</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 3: VENUE DETAILS (SAWARTHIA SEWA SADAN) -->
+    <section class="venue-section" id="venue">
+      <div class="section-ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <svg class="graphic-icon ornament-diya-svg" viewBox="0 0 24 24">
+          <path d="M12 2c0 2.2-2 4-2 6a2 2 0 1 0 4 0C14 6 12 4.2 12 2z" fill="currentColor"/>
+          <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="ornament-line"></span>
+      </div>
+
+      <div class="section-header">
+        <p class="section-tag">Celebration Location</p>
+        <h2 class="section-title">The Venue</h2>
+      </div>
+
+      <div class="venue-card reveal-on-scroll">
+        <div class="venue-header-box">
+          <h3 class="venue-main-name">Sawarthia Sewa Sadan</h3>
+          <p class="venue-sub-tag">Ayodhya Dham, Uttar Pradesh</p>
+        </div>
+
+        <div class="venue-meta-list">
+          <div class="venue-meta-row">
+            <svg class="graphic-icon venue-row-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div class="venue-row-text">
+              <strong>Address:</strong>
+              <p>NH-27, Shahnewajpur Manjha, Ayodhya, UP 272129</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="venue-actions-grid">
+          <a href="https://share.google/TCRyl7qO90pIOgZB4" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+            <span>Google Maps</span>
+          </a>
+          <a href="https://www.sawarthiasewasadan.com/Ayodhya" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span>Venue Website</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: AYODHYA WINTER WEATHER & PACKING GUIDE -->
+    <section class="weather-section" id="weather">
+      <div class="section-ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <svg class="graphic-icon ornament-diya-svg" viewBox="0 0 24 24">
+          <path d="M12 2c0 2.2-2 4-2 6a2 2 0 1 0 4 0C14 6 12 4.2 12 2z" fill="currentColor"/>
+          <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="ornament-line"></span>
+      </div>
+
+      <div class="section-header">
+        <p class="section-tag">Late December Advisory</p>
+        <h2 class="section-title">Weather & Attire</h2>
+      </div>
+
+      <div class="weather-card reveal-on-scroll">
+        <div class="weather-stats-grid">
+          
+          <!-- Daytime Weather -->
+          <div class="weather-stat-box daytime-box">
+            <svg class="graphic-icon weather-svg sun-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <div class="stat-meta">
+              <span class="stat-label">Daytime High</span>
+              <strong class="stat-temp">21°C – 23°C</strong>
+              <span class="stat-desc">Pleasant Sunshine</span>
+            </div>
+          </div>
+
+          <!-- Evening / Night Weather -->
+          <div class="weather-stat-box nighttime-box">
+            <svg class="graphic-icon weather-svg moon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <div class="stat-meta">
+              <span class="stat-label">Night Low</span>
+              <strong class="stat-temp">8°C – 10°C</strong>
+              <span class="stat-desc">Crisp & Chilly</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Packing & Attire Tip -->
+        <div class="attire-advisory-box">
+          <svg class="graphic-icon advisory-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+          </svg>
+          <div class="advisory-content">
+            <h4 class="advisory-title">Attire Note</h4>
+            <p class="advisory-text">
+              Afternoons are mild and sunny. For the evening dance, ceremony, and dinners, please carry <strong>shawls, pashminas, Nehru jackets, or blazers</strong> to stay comfortable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: AYODHYA DHAM SIGNIFICANCE -->
+    <section class="destination-section" id="destination">
+      <div class="section-ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <svg class="graphic-icon ornament-diya-svg" viewBox="0 0 24 24">
+          <path d="M12 2c0 2.2-2 4-2 6a2 2 0 1 0 4 0C14 6 12 4.2 12 2z" fill="currentColor"/>
+          <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="ornament-line"></span>
+      </div>
+
+      <div class="destination-card reveal-on-scroll">
+        <span class="sacred-tag">Ayodhya Dham</span>
+        <h3 class="destination-title">Fifty Sacred Years</h3>
+        <p class="destination-text">
+          Fifty golden years of love, duty, and steadfast togetherness consecrated in the holy city of Ayodhya.
+        </p>
+        <div class="ayodhya-highlights">
+          <div class="highlight-pill">Wedding Ceremony</div>
+          <div class="highlight-pill">Suvarna Mahotsav</div>
+          <div class="highlight-pill">Family Blessings</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: INTERACTIVE RSVP -->
+    <section class="rsvp-section" id="rsvp">
+      <div class="section-ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <svg class="graphic-icon ornament-diya-svg" viewBox="0 0 24 24">
+          <path d="M12 2c0 2.2-2 4-2 6a2 2 0 1 0 4 0C14 6 12 4.2 12 2z" fill="currentColor"/>
+          <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="ornament-line"></span>
+      </div>
+
+      <div class="section-header">
+        <p class="section-tag">Confirm Attendance</p>
+        <h2 class="section-title">RSVP</h2>
+      </div>
+
+      <div class="rsvp-container reveal-on-scroll">
+        <!-- Direct 1-Tap WhatsApp RSVP -->
+        <div class="whatsapp-rsvp-card">
+          <p class="rsvp-choice-title">1-Tap WhatsApp RSVP</p>
+          <a id="whatsappRsvpLink" href="https://wa.me/?text=Hi%2C%20we%20are%20delighted%20to%20attend%20Anita%20%26%20Vimal's%2050th%20Golden%20Anniversary%20Celebration%20at%20Sawarthia%20Sewa%20Sadan%2C%20Ayodhya!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.45 744.966 1.203.664.592 1.224.776 1.398.863.173.087.275.073.376-.044.101-.116.433-.506.549-.679.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.203c.044.072.044.419-.1 824z" fill="currentColor"/>
+            </svg>
+            <span>Confirm via WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="rsvp-divider">
+          <span>OR VIA FORM</span>
+        </div>
+
+        <!-- In-Page Form RSVP -->
+        <form id="rsvpForm" class="rsvp-form" novalidate>
+          <div class="form-group">
+            <label for="guestName">Your Full Name <span class="required">*</span></label>
+            <input type="text" id="guestName" name="guestName" required placeholder="Full Name" autocomplete="name">
+            <span class="field-error" id="nameError" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="guestAttendance">Attendance <span class="required">*</span></label>
+            <select id="guestAttendance" name="guestAttendance" required>
+              <option value="" disabled selected>Select Attendance</option>
+              <option value="joyfully-all-days">Attending All 3 Days (Dec 26–28)</option>
+              <option value="joyfully-main-day">Attending Main Day (Dec 27)</option>
+              <option value="regretfully-decline">Regretfully Decline</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="guestCount">Number of Guests</label>
+            <input type="number" id="guestCount" name="guestCount" min="1" max="12" value="2">
+          </div>
+
+          <div class="form-group">
+            <label for="guestNote">Notes or Wishes</label>
+            <textarea id="guestNote" name="guestNote" rows="2" placeholder="Optional message"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-rsvp-btn" id="submitRsvpBtn">
+            <span>Send RSVP</span>
+          </button>
+
+          <p class="form-success-msg" id="rsvpSuccessMsg" role="status" aria-live="polite" hidden>
+            Thank you! Your RSVP has been received. We look forward to welcoming you in Ayodhya.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECTION 7: ASHIRWAD & BLESSINGS WALL -->
+    <section class="blessings-section" id="blessings">
+      <div class="section-ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <svg class="graphic-icon ornament-diya-svg" viewBox="0 0 24 24">
+          <path d="M12 2c0 2.2-2 4-2 6a2 2 0 1 0 4 0C14 6 12 4.2 12 2z" fill="currentColor"/>
+          <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7c0-2-4-2-8-2s-8 0-8 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="ornament-line"></span>
+      </div>
+
+      <div class="section-header">
+        <p class="section-tag">Ashirwad & Wishes</p>
+        <h2 class="section-title">Words for Anita & Vimal</h2>
+      </div>
+
+      <div class="blessings-wrap reveal-on-scroll">
+        <form id="blessingForm" class="blessing-form">
+          <div class="form-row">
+            <input type="text" id="blessingAuthor" placeholder="Your Name" required>
+            <button type="submit" class="btn btn-secondary send-blessing-btn">
+              <span>Post Wish</span>
+            </button>
+          </div>
+          <textarea id="blessingText" rows="2" placeholder="Write a blessing or wish..." required></textarea>
+        </form>
+
+        <div class="blessings-feed" id="blessingsFeed" aria-live="polite">
+          <p class="empty-blessings-note" id="emptyBlessingsNote">Be the first to share a blessing for Anita & Vimal</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <p class="footer-title">Anita & Vimal • 50th Anniversary</p>
+      <p class="footer-hosts">Lovingly hosted by children, grandchildren & family</p>
+      <p class="footer-copy">Sawarthia Sewa Sadan • Ayodhya • Dec 26–28, 2026</p>
+    </footer>
+
+    <!-- STICKY MOBILE ACTION BAR (VECTOR GRAPHIC ICONS FOR PHONE) -->
+    <nav class="mobile-sticky-bar" aria-label="Quick mobile actions">
+      <a href="#itinerary" class="sticky-nav-item">
+        <svg class="graphic-icon nav-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span class="sticky-nav-text">Schedule</span>
+      </a>
+      <a href="#venue" class="sticky-nav-item">
+        <svg class="graphic-icon nav-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span class="sticky-nav-text">Venue</span>
+      </a>
+      <a href="#weather" class="sticky-nav-item">
+        <svg class="graphic-icon nav-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+        </svg>
+        <span class="sticky-nav-text">Weather</span>
+      </a>
+      <a href="#rsvp" class="sticky-nav-item highlight-cta">
+        <svg class="graphic-icon nav-svg cta-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="sticky-nav-text">RSVP</span>
+      </a>
+      <a href="#blessings" class="sticky-nav-item">
+        <svg class="graphic-icon nav-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span class="sticky-nav-text">Wishes</span>
+      </a>
+    </nav>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

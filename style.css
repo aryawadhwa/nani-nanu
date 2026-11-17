@@ -1307,6 +1307,36 @@ img, svg {
   margin-top: 0.3rem;
 }
 
+.btn-whatsapp-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.btn-whatsapp-submit:hover,
+.btn-whatsapp-submit:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  background: linear-gradient(135deg, #28e16e 0%, #159a8b 100%);
+}
+
+.btn-whatsapp-submit .btn-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .form-success-msg {
   background: rgba(30, 60, 35, 0.5);
   border: 1px solid rgba(37, 211, 102, 0.45);

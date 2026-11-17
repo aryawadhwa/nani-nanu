@@ -434,15 +434,31 @@ function initWhatsAppRsvp() {
 }
 
 // =============================================================================
-// 9. In-Page RSVP Form
+// 9. In-Page RSVP Form (Direct to WhatsApp)
 // =============================================================================
 function initRsvpForm() {
   const form = document.getElementById('rsvpForm');
   const successMsg = document.getElementById('rsvpSuccessMsg');
+  const manualLink = document.getElementById('waManualLink');
   const nameInput = document.getElementById('guestName');
   const nameError = document.getElementById('nameError');
+  const attendanceSelect = document.getElementById('guestAttendance');
+  const countInput = document.getElementById('guestCount');
+  const recipientSelect = document.getElementById('rsvpRecipient');
+  const noteInput = document.getElementById('guestNote');
+  const submitBtn = document.getElementById('submitRsvpBtn');
 
   if (!form) return;
+
+  // Toggle guest count visibility when user declines
+  if (attendanceSelect && countInput) {
+    attendanceSelect.addEventListener('change', () => {
+      const countGroup = countInput.closest('.form-group');
+      if (countGroup) {
+        countGroup.style.display = attendanceSelect.value === 'regretfully-decline' ? 'none' : 'block';
+      }
+    });
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -455,18 +471,47 @@ function initRsvpForm() {
     }
     if (nameError) nameError.textContent = '';
 
-    const attendance = document.getElementById('guestAttendance').value;
-    const count = document.getElementById('guestCount').value;
-    const note = document.getElementById('guestNote').value;
+    const attendance = attendanceSelect ? attendanceSelect.value : '';
+    if (!attendance) {
+      attendanceSelect.focus();
+      return;
+    }
 
+    const count = countInput ? countInput.value : '2';
+    const note = noteInput ? noteInput.value.trim() : '';
+    const recipientPhone = recipientSelect ? recipientSelect.value : '919839019029';
+
+    const attendanceLabels = {
+      'joyfully-all-days': 'Joyfully Attending All 3 Days (Dec 26–28)',
+      'joyfully-main-day': 'Attending Main Day (Dec 27)',
+      'regretfully-decline': 'Regretfully Decline'
+    };
+    const attendanceText = attendanceLabels[attendance] || attendance;
+
+    // Compose royal WhatsApp message
+    let message = `🌸 *RSVP: Anita & Vimal's 50th Golden Anniversary* 🌸\n`;
+    message += `*Venue:* Sawarthia Sewa Sadan, Ayodhya Dham (Dec 26–28, 2026)\n\n`;
+    message += `• *Guest Name:* ${name}\n`;
+    message += `• *Response:* ${attendanceText}\n`;
+    if (attendance !== 'regretfully-decline') {
+      message += `• *Number of Guests:* ${count}\n`;
+    }
+    if (note) {
+      message += `• *Message / Wishes:* ${note}\n`;
+    }
+    message += `\nLooking forward to celebrating together! 🙏✨`;
+
+    const waUrl = `https://wa.me/${recipientPhone}?text=${encodeURIComponent(message)}`;
+
+    // Store in localStorage as backup
     const rsvpData = {
       name,
       attendance,
       count,
       note,
+      recipient: recipientPhone,
       submittedAt: new Date().toISOString()
     };
-
     try {
       const existing = JSON.parse(localStorage.getItem('ayodhya_anniversary_rsvps') || '[]');
       existing.push(rsvpData);
@@ -477,19 +522,24 @@ function initRsvpForm() {
 
     playTempleBell();
 
+    if (manualLink) {
+      manualLink.href = waUrl;
+    }
+
     if (successMsg) {
       successMsg.hidden = false;
       successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    const submitBtn = document.getElementById('submitRsvpBtn');
     if (submitBtn) {
-      submitBtn.disabled = true;
       submitBtn.innerHTML = `
         <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>RSVP Received</span>
+        <span>RSVP Sent via WhatsApp ✓</span>
       `;
     }
+
+    // Open WhatsApp
+    window.open(waUrl, '_blank');
   });
 }
 

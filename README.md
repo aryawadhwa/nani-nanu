@@ -1,6 +1,6 @@
 # Anita & Vimal — 50th Golden Anniversary (Suvarna Mahotsav)
 
-A mobile-first, cinematic digital invitation celebrating 50 Sacred Years of Anita & Vimal at **Sawarthia Sewa Sadan, Ayodhya Dham** (December 26–28, 2026).
+A mobile-first, cinematic digital invitation celebrating 50 Sacred Years of Anita & Vimal at **Sawarthia Sewa Sadan, Ayodhya Dham** (Sunday, December 27, 2026).
 
 ---
 

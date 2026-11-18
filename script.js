@@ -8,9 +8,9 @@
 // Configuration
 // =============================================================================
 const EVENT_CONFIG = {
-  // December 26th, 2:00 PM IST (Welcome Lunch start at Sawarthia Sewa Sadan)
-  targetDate: new Date('2026-12-26T14:00:00+05:30'),
-  endDate: new Date('2026-12-28T12:00:00+05:30'),
+  // Sunday, December 27th, 10:00 AM IST (Celebration start at Sawarthia Sewa Sadan)
+  targetDate: new Date('2026-12-27T10:00:00+05:30'),
+  endDate: new Date('2026-12-27T23:30:00+05:30'),
   
   names: 'Anita & Vimal',
   title: "Anita & Vimal's 50th Golden Anniversary | Ayodhya Dham",
@@ -377,7 +377,7 @@ function initItineraryTabs() {
 }
 
 // =============================================================================
-// 6. Add 3-Day Event to Calendar (.ics) with Exact Venue & Address
+// 6. Add Event to Calendar (.ics) with Exact Venue & Address
 // =============================================================================
 function initAddToCalendar() {
   const calBtn = document.getElementById('addToCalBtn');
@@ -401,7 +401,7 @@ function initAddToCalendar() {
       `DTSTART:${formatDate(start)}`,
       `DTEND:${formatDate(end)}`,
       `SUMMARY:${EVENT_CONFIG.title}`,
-      `DESCRIPTION:Join us for 3 days of celebration in Ayodhya Dham for Anita & Vimal's 50th Golden Anniversary at Sawarthia Sewa Sadan! High Tea, Evening Dance, Wedding Ceremony, and Gala Banquet.`,
+      `DESCRIPTION:Join us in Ayodhya Dham for Anita & Vimal's 50th Golden Anniversary celebration at Sawarthia Sewa Sadan on Sunday, December 27, 2026! Sacred Hawan, Lunch, Wedding Ceremony & Gala Dinner.`,
       `LOCATION:${EVENT_CONFIG.venue}`,
       'STATUS:CONFIRMED',
       'END:VEVENT',
@@ -428,7 +428,7 @@ function initWhatsAppRsvp() {
   if (!link) return;
 
   const phone = EVENT_CONFIG.whatsappNumber ? EVENT_CONFIG.whatsappNumber.replace(/[^0-9]/g, '') : '';
-  const message = encodeURIComponent(`Hi! We are delighted to RSVP for Anita & Vimal's 50th Golden Anniversary celebration at Sawarthia Sewa Sadan, Ayodhya (Dec 26–28)!\n\nAttending: Yes (All 3 Days)\nGuest Names: `);
+  const message = encodeURIComponent(`Hi! We are delighted to RSVP for Anita & Vimal's 50th Golden Anniversary celebration at Sawarthia Sewa Sadan, Ayodhya on Sunday, Dec 27, 2026!\n\nGuest Names: `);
   
   link.href = phone ? `https://wa.me/${phone}?text=${message}` : `https://wa.me/?text=${message}`;
 }
@@ -482,15 +482,14 @@ function initRsvpForm() {
     const recipientPhone = recipientSelect ? recipientSelect.value : '919839019029';
 
     const attendanceLabels = {
-      'joyfully-all-days': 'Joyfully Attending All 3 Days (Dec 26–28)',
-      'joyfully-main-day': 'Attending Main Day (Dec 27)',
+      'joyfully-attend': 'Joyfully Attending (Sunday, Dec 27)',
       'regretfully-decline': 'Regretfully Decline'
     };
     const attendanceText = attendanceLabels[attendance] || attendance;
 
     // Compose royal WhatsApp message
     let message = `🌸 *RSVP: Anita & Vimal's 50th Golden Anniversary* 🌸\n`;
-    message += `*Venue:* Sawarthia Sewa Sadan, Ayodhya Dham (Dec 26–28, 2026)\n\n`;
+    message += `*Venue:* Sawarthia Sewa Sadan, Ayodhya Dham (Sunday, Dec 27, 2026)\n\n`;
     message += `• *Guest Name:* ${name}\n`;
     message += `• *Response:* ${attendanceText}\n`;
     if (attendance !== 'regretfully-decline') {

@@ -543,84 +543,7 @@ function initRsvpForm() {
 }
 
 // =============================================================================
-// 10. Ashirwad & Blessings Wall
-// =============================================================================
-function initBlessingsWall() {
-  const form = document.getElementById('blessingForm');
-  const feed = document.getElementById('blessingsFeed');
-  const authorInput = document.getElementById('blessingAuthor');
-  const textInput = document.getElementById('blessingText');
-  const emptyNote = document.getElementById('emptyBlessingsNote');
-
-  if (!form || !feed) return;
-
-  function updateEmptyState() {
-    if (emptyNote) {
-      const cards = feed.querySelectorAll('.blessing-card');
-      emptyNote.hidden = cards.length > 0;
-    }
-  }
-
-  try {
-    const saved = JSON.parse(localStorage.getItem('ayodhya_blessings') || '[]');
-    // Filter out any stale dummy placeholder data
-    const cleaned = saved.filter(b => b && b.author && !b.author.includes('Sharma'));
-    if (cleaned.length !== saved.length) {
-      localStorage.setItem('ayodhya_blessings', JSON.stringify(cleaned));
-    }
-    cleaned.forEach(b => appendBlessingCard(b.author, b.text, false));
-  } catch (err) {
-    console.warn(err);
-  }
-
-  updateEmptyState();
-
-  function appendBlessingCard(author, text, isNew = false) {
-    const blockquote = document.createElement('blockquote');
-    blockquote.className = 'blessing-card sacred-card-border';
-    if (isNew) {
-      blockquote.style.animation = 'scroll-fade-in 0.6s ease';
-    }
-
-    const p = document.createElement('p');
-    p.className = 'blessing-quote';
-    p.textContent = `"${text}"`;
-
-    const cite = document.createElement('cite');
-    cite.className = 'blessing-sender';
-    cite.textContent = `— ${author}`;
-
-    blockquote.appendChild(p);
-    blockquote.appendChild(cite);
-    feed.prepend(blockquote);
-    updateEmptyState();
-  }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const author = authorInput.value.trim();
-    const text = textInput.value.trim();
-
-    if (!author || !text) return;
-
-    appendBlessingCard(author, text, true);
-
-    try {
-      const saved = JSON.parse(localStorage.getItem('ayodhya_blessings') || '[]');
-      saved.unshift({ author, text, date: new Date().toISOString() });
-      localStorage.setItem('ayodhya_blessings', JSON.stringify(saved));
-    } catch (err) {
-      console.warn(err);
-    }
-
-    authorInput.value = '';
-    textInput.value = '';
-    playTempleBell();
-  });
-}
-
-// =============================================================================
-// 11. Scroll Fallback
+// 10. Scroll Fallback
 // =============================================================================
 function initScrollFallback() {
   const supportsNativeScrollTimeline = CSS.supports && CSS.supports('(animation-timeline: view()) and (animation-range: entry)');
@@ -649,11 +572,8 @@ function initScrollFallback() {
 document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
   initAudioControls();
-  initCountdown();
-  initItineraryTabs();
   initAddToCalendar();
   initWhatsAppRsvp();
   initRsvpForm();
-  initBlessingsWall();
   initScrollFallback();
 });

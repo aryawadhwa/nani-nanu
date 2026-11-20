@@ -21,7 +21,8 @@ const EVENT_CONFIG = {
   
   rsvpContacts: [
     { name: 'Kunal', phone: '+919839019029', display: '+91 98390 19029' },
-    { name: 'Trisha', phone: '+919984134800', display: '+91 99841 34800' }
+    { name: 'Trisha', phone: '+919984134800', display: '+91 99841 34800' },
+    { name: 'Parul', phone: '+919839073337', display: '+91 98390 73337' }
   ],
   customAudioUrl: 'assets/music.m4a',
   customAudioFallbackUrl: 'assets/music.mp3'
@@ -401,7 +402,7 @@ function initAddToCalendar() {
       `DTSTART:${formatDate(start)}`,
       `DTEND:${formatDate(end)}`,
       `SUMMARY:${EVENT_CONFIG.title}`,
-      `DESCRIPTION:Join us in Ayodhya Dham for Anita & Vimal's 50th Golden Anniversary celebration at Sawarthia Sewa Sadan on Sunday, December 27, 2026! Sacred Hawan, Lunch, Wedding Ceremony & Gala Dinner.`,
+      `DESCRIPTION:Join us in Ayodhya Dham for Anita & Vimal's 50th Golden Anniversary celebration at Sawarthia Sewa Sadan on Sunday, December 27, 2026! Sacred Hawan (Attire: Shades of Orange), Lunch, Wedding Ceremony & Gala Dinner (Attire: Men in Black, Women in Any Colour with Shades of Golden).`,
       `LOCATION:${EVENT_CONFIG.venue}`,
       'STATUS:CONFIRMED',
       'END:VEVENT',

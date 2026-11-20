@@ -760,6 +760,47 @@ img, svg {
   color: var(--text-muted);
 }
 
+.item-dresscode {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+  padding: 0.22rem 0.65rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  color: var(--champagne-gold);
+}
+
+.item-dresscode .dresscode-tag {
+  color: var(--marigold-bright);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+}
+
+.item-dresscode.orange-theme {
+  background: rgba(230, 81, 0, 0.16);
+  border-color: rgba(249, 115, 22, 0.45);
+  color: #fed7aa;
+}
+
+.item-dresscode.orange-theme .dresscode-tag {
+  color: #fb923c;
+}
+
+.item-dresscode.gold-black-theme {
+  background: rgba(212, 175, 55, 0.14);
+  border-color: rgba(212, 175, 55, 0.42);
+  color: #fef08a;
+}
+
+.item-dresscode.gold-black-theme .dresscode-tag {
+  color: var(--marigold-bright);
+}
+
 .itinerary-actions {
   display: grid;
   grid-template-columns: 1fr;
@@ -934,6 +975,7 @@ img, svg {
   border: 1px solid rgba(230, 81, 0, 0.3);
   border-radius: 11px;
   padding: 0.95rem 1rem;
+  margin-top: 1rem;
 }
 
 .advisory-svg {

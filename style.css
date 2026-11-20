@@ -1241,18 +1241,18 @@ img, svg {
 }
 
 .btn-whatsapp {
-  background: var(--sacred-gold-gradient);
-  color: #12091c;
+  background: var(--sacred-gold-gradient) !important;
+  color: #12091c !important;
   font-weight: 700;
   border-radius: 10px;
   padding: 0.85rem 1.25rem;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3) !important;
   inline-size: 100%;
 }
 
 .btn-whatsapp:hover,
 .btn-whatsapp:focus-visible {
-  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45) !important;
   transform: translateY(-1px);
 }
 
@@ -1493,7 +1493,7 @@ img, svg {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  background: var(--sacred-gold-gradient);
+  background: var(--sacred-gold-gradient) !important;
   color: #12091c !important;
   border: 1px solid rgba(255, 248, 220, 0.35);
   font-family: var(--font-sans);
@@ -1501,7 +1501,7 @@ img, svg {
   font-weight: 700;
   letter-spacing: 0.03em;
   border-radius: 10px;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.38);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.38) !important;
   cursor: pointer;
   transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
 }
@@ -1509,14 +1509,15 @@ img, svg {
 .btn-whatsapp-submit:hover,
 .btn-whatsapp-submit:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 6px 26px rgba(212, 175, 55, 0.55);
-  background: linear-gradient(135deg, #fff9e6 0%, #f0dbaf 40%, #dfbe76 80%, #ad8637 100%);
+  box-shadow: 0 6px 26px rgba(212, 175, 55, 0.55) !important;
+  background: linear-gradient(135deg, #fff9e6 0%, #f0dbaf 40%, #dfbe76 80%, #ad8637 100%) !important;
 }
 
 .btn-whatsapp-submit .btn-svg {
   width: 1.25rem;
   height: 1.25rem;
-  color: #12091c;
+  color: #12091c !important;
+  fill: #12091c !important;
 }
 
 .form-success-msg {

@@ -45,8 +45,6 @@
   --text-muted: #a69888;
   --text-chandan: #f2e7d3;
 
-  --whatsapp-green: #25d366;
-
   /* Radiant Sacred Gradients */
   --sacred-gold-gradient: linear-gradient(135deg, #fff7de 0%, #e2c27c 45%, #cfa959 75%, #9e7428 100%);
   --gold-foil-text: linear-gradient(135deg, #fff9e6 0%, #faedd0 30%, #dfbe76 55%, #b58933 80%, #faedd0 100%);
@@ -1243,17 +1241,18 @@ img, svg {
 }
 
 .btn-whatsapp {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #fff;
+  background: var(--sacred-gold-gradient);
+  color: #12091c;
+  font-weight: 700;
   border-radius: 10px;
   padding: 0.85rem 1.25rem;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
   inline-size: 100%;
 }
 
 .btn-whatsapp:hover,
 .btn-whatsapp:focus-visible {
-  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
   transform: translateY(-1px);
 }
 
@@ -1362,8 +1361,8 @@ img, svg {
 }
 
 .btn-whatsapp-sm {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #fff;
+  background: var(--sacred-gold-gradient);
+  color: #12091c;
   border-radius: 8px;
   padding: 0.55rem 0.65rem;
   font-size: 0.78rem;
@@ -1372,15 +1371,15 @@ img, svg {
   justify-content: center;
   gap: 0.35rem;
   text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.25);
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
   transition: transform 0.18s, box-shadow 0.18s;
   min-block-size: 40px;
 }
 
 .btn-whatsapp-sm:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
 }
 
 .btn-call-sm {
@@ -1494,41 +1493,43 @@ img, svg {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--sacred-gold-gradient);
+  color: #12091c !important;
+  border: 1px solid rgba(255, 248, 220, 0.35);
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.03em;
   border-radius: 10px;
-  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.38);
   cursor: pointer;
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
 }
 
 .btn-whatsapp-submit:hover,
 .btn-whatsapp-submit:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
-  background: linear-gradient(135deg, #28e16e 0%, #159a8b 100%);
+  box-shadow: 0 6px 26px rgba(212, 175, 55, 0.55);
+  background: linear-gradient(135deg, #fff9e6 0%, #f0dbaf 40%, #dfbe76 80%, #ad8637 100%);
 }
 
 .btn-whatsapp-submit .btn-svg {
   width: 1.25rem;
   height: 1.25rem;
+  color: #12091c;
 }
 
 .form-success-msg {
-  background: rgba(30, 60, 35, 0.5);
-  border: 1px solid rgba(37, 211, 102, 0.45);
-  color: #a4f5b8;
+  background: rgba(42, 22, 60, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #faedd0;
   padding: 0.95rem;
   border-radius: 10px;
   font-size: 0.88rem;
   text-align: center;
   margin-top: 0.75rem;
   line-height: 1.45;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================================

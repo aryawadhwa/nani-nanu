@@ -237,84 +237,140 @@
     opacity: 0.85;
   }
 
-  /* ITINERARY */
+  /* PROGRAMME & ITINERARY */
   .itinerary-box {
-    width: 980px;
+    width: 1040px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .itin-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.32em;
     color: #cfa959;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 4px;
   }
-
-  .days-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 100%;
-  }
-
-  .day-row {
-    background: rgba(22, 10, 32, 0.45);
-    border: 1px solid rgba(212, 175, 55, 0.18);
-    border-radius: 12px;
-    padding: 14px 26px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .day-row.wedding-highlight {
-    background: rgba(38, 16, 54, 0.65);
-    border: 1.2px solid rgba(223, 190, 118, 0.45);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  }
-
-  .day-meta {
-    text-align: left;
-    min-width: 250px;
-  }
-  .day-name {
+  .itin-date {
     font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 700;
     color: #faedd0;
-  }
-  .day-theme {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    color: #c4b096;
-    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
   }
 
-  .day-events {
-    text-align: right;
+  .programme-luxury-container {
+    width: 100%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(36, 15, 52, 0.65) 0%, rgba(18, 8, 28, 0.8) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    padding: 24px 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 24px rgba(212, 175, 55, 0.04);
+  }
+
+  .prog-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .prog-col-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #dfbe76;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    margin-bottom: 2px;
+  }
+
+  .prog-event-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .p-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffd778;
+    min-width: 95px;
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+  }
+
+  .p-detail {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-  .event-line {
+
+  .p-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.15;
+  }
+
+  .p-attire-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 3px;
+  }
+
+  .p-attire-tag {
     font-family: 'Montserrat', sans-serif;
-    font-size: 13.5px;
-    color: #eee4d2;
+    font-size: 13px;
+    color: #fed7aa;
+    font-weight: 500;
     letter-spacing: 0.02em;
   }
-  .event-line strong {
-    color: #e8ca84;
-    font-weight: 600;
-    margin-right: 4px;
+
+  .p-palette-ribbon {
+    display: inline-block;
+    height: 6px;
+    border-radius: 999px;
   }
-  .event-line.gala-highlight strong {
-    color: #fff4d4;
-    font-size: 14.5px;
+
+  .p-palette-ribbon.orange-ribbon {
+    width: 85px;
+    background: linear-gradient(to right, #ffedd5, #fed7aa, #fb923c, #ea580c, #9a3412);
+  }
+
+  .p-dual-ribbons {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .p-palette-ribbon.black-ribbon {
+    width: 25px;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .p-palette-ribbon.gold-ribbon {
+    width: 60px;
+    background: linear-gradient(to right, #fef08a, #eab308, #a16207);
+  }
+
+  .prog-col-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.35) 20%, rgba(212, 175, 55, 0.35) 80%, transparent);
+    margin: 0 30px;
   }
 
   /* VENUE SECTION */
@@ -497,29 +553,67 @@
       <div class="div-line"></div>
     </div>
 
-    <!-- CELEBRATION ITINERARY -->
+    <!-- CELEBRATION PROGRAMME -->
     <div class="itinerary-box">
       <p class="itin-title">— Celebration Programme —</p>
-      
-      <div class="days-grid">
-        <!-- Sunday, Dec 27 Full Day Celebration -->
-        <div class="day-row wedding-highlight" style="flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 22px 30px;">
-          <div class="day-meta" style="text-align: center;">
-            <h3 class="day-name" style="font-size: 32px; color: #faedd0;">Sunday, December 27, 2026</h3>
-            <p class="day-theme" style="font-size: 20px; color: #dfbe76;">Golden Jubilee Celebrations & Sacred Hawan</p>
+      <h3 class="itin-date">Sunday, December 27, 2026</h3>
+
+      <div class="programme-luxury-container">
+        <!-- Morning Auspices Column -->
+        <div class="prog-col">
+          <p class="prog-col-title">Morning Auspices</p>
+
+          <div class="prog-event-row">
+            <span class="p-time">10:00 AM</span>
+            <div class="p-detail">
+              <span class="p-name">Breakfast</span>
+            </div>
           </div>
-          <div class="day-events" style="text-align: center; width: 100%;">
-            <p class="event-line" style="font-size: 22px; margin-bottom: 10px;"><strong>10:00 AM</strong> Breakfast &nbsp;•&nbsp; <strong>11:00 AM</strong> Sacred Hawan &nbsp;•&nbsp; <strong>2:00 PM</strong> Festive Lunch</p>
-            <p class="event-line gala-highlight" style="font-size: 23px; color: #ffd778;"><strong>6:00 PM</strong> Wedding Programme &nbsp;•&nbsp; <strong>8:00 PM</strong> Gala Dinner</p>
-            <p class="event-dresscode" style="font-size: 18px; color: #faedd0; margin-top: 12px; letter-spacing: 0.02em;">
-              <span style="color: #fb923c; font-weight: 600;">Hawan:</span> Shades of Orange 🍊 &nbsp;•&nbsp; <span style="color: #ffd778; font-weight: 600;">Gala Dinner:</span> Men in Black, Women in Any Colour with Shades of Golden ✨
-            </p>
-            <div class="card-palette-row" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px;">
-              <span style="font-size: 13px; color: #fed7aa; letter-spacing: 0.05em;">Hawan Palette:</span>
-              <span style="display: inline-block; width: 100px; height: 6px; border-radius: 999px; background: linear-gradient(to right, #ffedd5, #fed7aa, #fb923c, #ea580c, #9a3412);"></span>
-              <span style="font-size: 13px; color: #fef08a; letter-spacing: 0.05em; margin-left: 12px;">Gala Palette:</span>
-              <span style="display: inline-block; width: 35px; height: 6px; border-radius: 999px; background: #000; border: 1px solid rgba(255,255,255,0.3);"></span>
-              <span style="display: inline-block; width: 75px; height: 6px; border-radius: 999px; background: linear-gradient(to right, #fef08a, #eab308, #a16207);"></span>
+
+          <div class="prog-event-row">
+            <span class="p-time">11:00 AM</span>
+            <div class="p-detail">
+              <span class="p-name">Sacred Hawan</span>
+              <div class="p-attire-wrap">
+                <span class="p-attire-tag">Shades of Orange 🍊</span>
+                <span class="p-palette-ribbon orange-ribbon"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="prog-event-row">
+            <span class="p-time">2:00 PM</span>
+            <div class="p-detail">
+              <span class="p-name">Festive Lunch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical Gold Divider -->
+        <div class="prog-col-divider"></div>
+
+        <!-- Evening Celebrations Column -->
+        <div class="prog-col">
+          <p class="prog-col-title">Evening Festivities</p>
+
+          <div class="prog-event-row">
+            <span class="p-time">6:00 PM</span>
+            <div class="p-detail">
+              <span class="p-name">Wedding Ceremony & Varmala</span>
+            </div>
+          </div>
+
+          <div class="prog-event-row">
+            <span class="p-time">8:00 PM</span>
+            <div class="p-detail">
+              <span class="p-name">Gala Dinner & Celebrations</span>
+              <div class="p-attire-wrap">
+                <span class="p-attire-tag">Men in Black • Women in Gold ✨</span>
+                <div class="p-dual-ribbons">
+                  <span class="p-palette-ribbon black-ribbon"></span>
+                  <span class="p-palette-ribbon gold-ribbon"></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

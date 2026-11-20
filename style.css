@@ -676,7 +676,8 @@ img, svg {
    Section 2: Royal Celebration Programme
    ========================================================================== */
 
-.itinerary-container {
+.itinerary-container,
+.programme-card {
   background: var(--bg-card);
   border: 1px solid var(--bg-card-border);
   border-radius: 18px;
@@ -688,16 +689,16 @@ img, svg {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0.5rem 0 1.25rem 0;
+  margin: 0.25rem 0;
 }
 
 /* Continuous vertical golden thread connecting events */
 .royal-timeline::before {
   content: "";
   position: absolute;
-  top: 16px;
-  bottom: 22px;
-  left: 95px;
+  top: 14px;
+  bottom: 18px;
+  left: 104px;
   width: 1px;
   background: linear-gradient(to bottom, 
     rgba(245, 158, 11, 0.2) 0%, 
@@ -715,15 +716,17 @@ img, svg {
 }
 
 .timeline-time {
-  width: 82px;
+  width: 92px;
   flex-shrink: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--marigold-bright);
+  font-weight: 600;
+  color: #ffd778;
   text-align: right;
-  padding-right: 14px;
-  letter-spacing: 0.02em;
+  padding-right: 18px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  line-height: 1.35;
   padding-top: 1px;
 }
 
@@ -734,7 +737,7 @@ img, svg {
   background: #170a22;
   border: 2px solid var(--marigold-gold);
   flex-shrink: 0;
-  margin-top: 5px;
+  margin-top: 4px;
   z-index: 2;
   box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
 }
@@ -762,7 +765,7 @@ img, svg {
 
 .event-title {
   font-family: var(--font-serif);
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.25;
@@ -770,203 +773,241 @@ img, svg {
 }
 
 .highlight-event .event-title {
-  color: #fff;
+  color: #ffffff;
 }
 
-.attire-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: 0.4rem;
-  padding: 0.28rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.78rem;
-}
-
-.orange-pill {
-  background: rgba(230, 81, 0, 0.16);
-  border: 1px solid rgba(249, 115, 22, 0.4);
-  color: #fed7aa;
-}
-
-.gold-black-pill {
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #fef08a;
-}
-
-.pill-label {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  opacity: 0.85;
-}
-
-.pill-ribbon {
-  display: inline-block;
-  height: 6px;
-  border-radius: 999px;
-  flex-shrink: 0;
-}
-
-.pill-ribbon.orange-ribbon {
-  width: 36px;
-  background: linear-gradient(to right, #ffedd5, #ea580c, #9a3412);
-}
-
-.pill-dual-ribbons {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.pill-ribbon.black-ribbon {
-  width: 14px;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}
-
-.pill-ribbon.gold-ribbon {
-  width: 26px;
-  background: linear-gradient(to right, #fef08a, #ca8a04);
-}
-
-/* Attire Palette Card */
-.attire-palette-card {
-  background: linear-gradient(145deg, rgba(32, 16, 46, 0.7) 0%, rgba(18, 9, 28, 0.85) 100%);
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  border-radius: 14px;
-  padding: 1.1rem 1.25rem;
-  margin-top: 0.75rem;
-}
-
-.palette-card-header {
-  text-align: center;
-  padding-bottom: 0.65rem;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.16);
-  margin-bottom: 0.85rem;
-}
-
-.palette-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  color: var(--marigold-bright);
-  letter-spacing: 0.03em;
-}
-
-.palette-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-@media (min-width: 600px) {
-  .palette-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-}
-
-.palette-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.palette-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.palette-event {
+.event-attire-hint {
+  margin-top: 0.35rem;
   font-family: var(--font-serif);
   font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.palette-tone {
-  font-size: 0.74rem;
-  font-weight: 600;
+  font-style: italic;
+  color: #dfbe76;
   letter-spacing: 0.02em;
-}
-
-.palette-tone.orange-tone {
-  color: #fb923c;
-}
-
-.palette-tone.gold-tone {
-  color: #ffd778;
-}
-
-.gradient-strip {
-  width: 100%;
-  height: 8px;
-  border-radius: 999px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-.orange-spectrum {
-  background: linear-gradient(to right, #ffedd5 0%, #fed7aa 25%, #fb923c 50%, #ea580c 75%, #9a3412 100%);
-  border: 1px solid rgba(251, 146, 60, 0.35);
-}
-
-.gala-dual-spectrum {
+  line-height: 1.35;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.35rem;
 }
 
-.spectrum-row {
+.event-attire-hint .hint-prefix {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(223, 190, 118, 0.7);
+}
+
+.event-attire-hint .hint-val {
+  color: #fed7aa;
+}
+
+.event-attire-hint.gala-hint .hint-val {
+  color: #faedd0;
+}
+
+/* Celebration Attire & Color Guide Card */
+.attire-guide-card {
+  background: linear-gradient(145deg, rgba(32, 16, 46, 0.75) 0%, rgba(18, 9, 28, 0.9) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  border-radius: 18px;
+  padding: 1.4rem 1.35rem;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55);
+  margin-top: 1.15rem;
+}
+
+.guide-card-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.65rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+  margin-bottom: 1.15rem;
 }
 
-.spectrum-label {
-  font-size: 0.72rem;
-  color: var(--champagne-gold);
-  width: 46px;
-  flex-shrink: 0;
+.guide-card-header .guide-ornament {
+  color: #cfa959;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.guide-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--gold-foil-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #faedd0;
+  text-align: center;
+  margin: 0;
 }
 
-.black-spectrum {
-  flex: 1;
-  background: linear-gradient(to right, #000000 0%, #1a1a1a 50%, #383838 100%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.attire-occasions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.gold-spectrum {
-  flex: 1;
-  background: linear-gradient(to right, #fef9c3 0%, #fef08a 25%, #facc15 50%, #eab308 75%, #a16207 100%);
-  border: 1px solid rgba(250, 204, 21, 0.35);
+.occasion-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.palette-caption {
+.occasion-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.occasion-title {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.occasion-tag {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.orange-tag {
+  background: rgba(234, 88, 12, 0.15);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  color: #fed7aa;
+}
+
+.gold-tag {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #faedd0;
+}
+
+.palette-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.palette-ribbon {
+  inline-size: 100%;
+  block-size: 16px;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.palette-ribbon.orange-spectrum {
+  background: linear-gradient(90deg, #ffedd5 0%, #fed7aa 25%, #fb923c 50%, #ea580c 75%, #9a3412 100%);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  box-shadow: 0 3px 12px rgba(234, 88, 12, 0.22);
+}
+
+.palette-shades {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  padding: 0 2px;
+}
+
+.guide-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  margin: 0.25rem 0;
+}
+
+.gala-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 520px) {
+  .gala-dual-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+  }
+}
+
+.gala-card {
+  background: rgba(14, 7, 21, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.gala-role-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #dfbe76;
+}
+
+.palette-ribbon.black-spectrum {
+  background: linear-gradient(90deg, #050505 0%, #1a1a1a 50%, #353535 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.palette-ribbon.gold-spectrum {
+  background: linear-gradient(90deg, #fff9e6 0%, #faedd0 25%, #dfbe76 55%, #b58933 80%, #faedd0 100%);
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.3);
+}
+
+.gala-detail {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.gala-caption {
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   color: var(--text-muted);
   line-height: 1.35;
-  margin-top: 0.2rem;
 }
 
 @media (max-width: 480px) {
   .royal-timeline::before {
-    left: 80px;
+    left: 88px;
   }
   .timeline-time {
-    width: 68px;
+    width: 78px;
     font-size: 0.88rem;
-    padding-right: 10px;
+    padding-right: 12px;
   }
   .timeline-body {
     padding-left: 14px;
   }
   .event-title {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+  }
+  .palette-shades {
+    font-size: 0.68rem;
   }
 }
 

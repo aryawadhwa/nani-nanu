@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
 
@@ -130,8 +130,8 @@
         <p class="section-subtitle">Sawarthia Sewa Sadan • Ayodhya Dham</p>
       </div>
 
-      <div class="itinerary-container reveal-on-scroll">
-        <!-- Royal Timeline -->
+      <!-- Royal Programme Timeline Card -->
+      <div class="programme-card reveal-on-scroll">
         <div class="royal-timeline">
 
           <!-- 10:00 AM -->
@@ -148,12 +148,11 @@
             <div class="timeline-time">11:00 AM</div>
             <div class="timeline-bullet sacred-bullet" aria-hidden="true"></div>
             <div class="timeline-body">
-              <h3 class="event-title">Sacred Hawan & Pujan</h3>
-              <div class="attire-pill orange-pill">
-                <span class="pill-label">Attire:</span>
-                <span class="pill-text">Shades of Orange 🍊</span>
-                <span class="pill-ribbon orange-ribbon" aria-hidden="true"></span>
-              </div>
+              <h3 class="event-title">Sacred Hawan &amp; Pujan</h3>
+              <p class="event-attire-hint">
+                <span class="hint-prefix">Attire:</span>
+                <span class="hint-val">Shades of Orange 🍊</span>
+              </p>
             </div>
           </div>
 
@@ -171,7 +170,7 @@
             <div class="timeline-time">6:00 PM</div>
             <div class="timeline-bullet wedding-bullet" aria-hidden="true"></div>
             <div class="timeline-body">
-              <h3 class="event-title">Wedding Ceremony & Varmala</h3>
+              <h3 class="event-title">Wedding Ceremony &amp; Varmala</h3>
             </div>
           </div>
 
@@ -180,57 +179,72 @@
             <div class="timeline-time">8:00 PM</div>
             <div class="timeline-bullet gala-bullet" aria-hidden="true"></div>
             <div class="timeline-body">
-              <h3 class="event-title">Gala Dinner & Celebrations</h3>
-              <div class="attire-pill gold-black-pill">
-                <span class="pill-label">Attire:</span>
-                <span class="pill-text">Men in Black &bull; Women in Any Colour with Gold ✨</span>
-                <div class="pill-dual-ribbons" aria-hidden="true">
-                  <span class="pill-ribbon black-ribbon"></span>
-                  <span class="pill-ribbon gold-ribbon"></span>
-                </div>
-              </div>
+              <h3 class="event-title">Gala Dinner &amp; Celebrations</h3>
+              <p class="event-attire-hint gala-hint">
+                <span class="hint-prefix">Attire:</span>
+                <span class="hint-val">Men in Black &bull; Women in Any Colour with Gold ✨</span>
+              </p>
             </div>
           </div>
 
         </div>
+      </div>
 
-        <!-- Attire Palette Card -->
-        <div class="attire-palette-card">
-          <div class="palette-card-header">
-            <h4 class="palette-card-title">Celebration Attire & Color Guide</h4>
-          </div>
-          <div class="palette-grid">
-            <!-- Hawan Spectrum -->
-            <div class="palette-col">
-              <div class="palette-meta">
-                <span class="palette-event">Sacred Hawan</span>
-                <span class="palette-tone orange-tone">Shades of Orange 🍊</span>
+      <!-- Dedicated Celebration Attire & Color Guide Card -->
+      <div class="attire-guide-card reveal-on-scroll">
+        <div class="guide-card-header">
+          <span class="guide-ornament" aria-hidden="true">✧</span>
+          <h3 class="guide-card-title">Celebration Attire Guide</h3>
+          <span class="guide-ornament" aria-hidden="true">✧</span>
+        </div>
+
+        <div class="attire-occasions">
+          <!-- Hawan Palette -->
+          <div class="occasion-block">
+            <div class="occasion-header">
+              <h4 class="occasion-title">Sacred Hawan</h4>
+              <span class="occasion-tag orange-tag">Shades of Orange 🍊</span>
+            </div>
+            <div class="palette-wrap">
+              <div class="palette-ribbon orange-spectrum" role="img" aria-label="Gradient palette from Peach to Marigold"></div>
+              <div class="palette-shades">
+                <span>Peach</span>
+                <span>Apricot</span>
+                <span>Saffron</span>
+                <span>Tangerine</span>
+                <span>Marigold</span>
               </div>
-              <div class="gradient-strip orange-spectrum" aria-label="From light peach to deep festive marigold"></div>
-              <p class="palette-caption">Peach &bull; Apricot &bull; Saffron &bull; Tangerine &bull; Marigold</p>
+            </div>
+          </div>
+
+          <div class="guide-divider" aria-hidden="true"></div>
+
+          <!-- Gala Dinner Palette -->
+          <div class="occasion-block">
+            <div class="occasion-header">
+              <h4 class="occasion-title">Gala Dinner</h4>
+              <span class="occasion-tag gold-tag">Black &amp; Shades of Golden ✨</span>
             </div>
 
-            <!-- Gala Spectrum -->
-            <div class="palette-col">
-              <div class="palette-meta">
-                <span class="palette-event">Gala Dinner</span>
-                <span class="palette-tone gold-tone">Black & Shades of Golden ✨</span>
+            <div class="gala-dual-grid">
+              <!-- Men -->
+              <div class="gala-card">
+                <div class="gala-role-title">Gentlemen</div>
+                <div class="palette-ribbon black-spectrum" role="img" aria-label="Classic Black spectrum"></div>
+                <div class="gala-detail">Classic Black</div>
+                <div class="gala-caption">Tuxedo, Bandhgala, or Classic Kurta</div>
               </div>
-              <div class="gala-dual-spectrum">
-                <div class="spectrum-row">
-                  <span class="spectrum-label">Men</span>
-                  <div class="gradient-strip black-spectrum" aria-label="Black to Charcoal"></div>
-                </div>
-                <div class="spectrum-row">
-                  <span class="spectrum-label">Women</span>
-                  <div class="gradient-strip gold-spectrum" aria-label="Champagne to Antique Gold"></div>
-                </div>
+
+              <!-- Women -->
+              <div class="gala-card">
+                <div class="gala-role-title">Ladies</div>
+                <div class="palette-ribbon gold-spectrum" role="img" aria-label="Golden tones spectrum"></div>
+                <div class="gala-detail">Any Colour with Gold</div>
+                <div class="gala-caption">Saree, Lehanga, or Gown with Golden Tones</div>
               </div>
-              <p class="palette-caption">Men in Classic Black &bull; Women in Any Colour with Gold</p>
             </div>
           </div>
         </div>
-
       </div>
 
       <!-- Quick Action Buttons for Calendar -->
@@ -416,6 +430,6 @@
 
   </main>
 
-  <script src="script.js?v=3.0"></script>
+  <script src="script.js?v=4.0"></script>
 </body>
 </html>

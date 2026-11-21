@@ -808,35 +808,37 @@ img, svg {
   color: #faedd0;
 }
 
-/* Celebration Attire & Color Guide Card */
+/* ==========================================================================
+   Royal Celebration Attire Guide (Atelier Swatches)
+   ========================================================================== */
+
 .attire-guide-card {
-  background: linear-gradient(145deg, rgba(32, 16, 46, 0.75) 0%, rgba(18, 9, 28, 0.9) 100%);
-  border: 1px solid rgba(245, 158, 11, 0.32);
+  background: radial-gradient(ellipse at 50% 0%, rgba(46, 22, 65, 0.65) 0%, rgba(18, 9, 28, 0.92) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.32);
   border-radius: 18px;
-  padding: 1.4rem 1.35rem;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55);
-  margin-top: 1.15rem;
+  padding: 1.65rem 1.4rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(212, 175, 55, 0.04);
+  margin-top: 1.25rem;
 }
 
-.guide-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
-  margin-bottom: 1.15rem;
+.guide-header-block {
+  text-align: center;
+  margin-bottom: 1.35rem;
 }
 
-.guide-card-header .guide-ornament {
-  color: #cfa959;
-  font-size: 0.85rem;
-  opacity: 0.85;
+.guide-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--champagne-gold);
+  margin-bottom: 0.35rem;
 }
 
-.guide-card-title {
+.guide-main-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.35rem, 1.2rem + 1vw, 1.65rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   background: var(--gold-foil-text);
@@ -844,151 +846,274 @@ img, svg {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #faedd0;
-  text-align: center;
   margin: 0;
 }
 
-.attire-occasions {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.occasion-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.occasion-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.occasion-title {
+.guide-subtitle {
   font-family: var(--font-serif);
-  font-size: 1.12rem;
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: 0.01em;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  letter-spacing: 0.02em;
 }
 
-.occasion-tag {
-  font-family: var(--font-sans);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 0.2rem 0.65rem;
-  border-radius: 999px;
+.guide-gold-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 280px;
+  margin: 0.85rem auto 0;
 }
 
-.orange-tag {
-  background: rgba(234, 88, 12, 0.15);
-  border: 1px solid rgba(251, 146, 60, 0.45);
-  color: #fed7aa;
+.guide-gold-rule .rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
 }
 
-.gold-tag {
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  color: #faedd0;
+.guide-gold-rule .rule-diamond {
+  color: #cfa959;
+  font-size: 0.65rem;
+  opacity: 0.85;
 }
 
-.palette-wrap {
+.attire-sections-wrap {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 1.35rem;
 }
 
-.palette-ribbon {
-  inline-size: 100%;
-  block-size: 16px;
-  border-radius: 999px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.palette-ribbon.orange-spectrum {
-  background: linear-gradient(90deg, #ffedd5 0%, #fed7aa 25%, #fb923c 50%, #ea580c 75%, #9a3412 100%);
-  border: 1px solid rgba(251, 146, 60, 0.45);
-  box-shadow: 0 3px 12px rgba(234, 88, 12, 0.22);
-}
-
-.palette-shades {
+.attire-event-card {
   display: flex;
-  justify-content: space-between;
-  font-family: var(--font-sans);
-  font-size: 0.74rem;
-  color: var(--text-muted);
-  letter-spacing: 0.03em;
-  padding: 0 2px;
-}
-
-.guide-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
-  margin: 0.25rem 0;
-}
-
-.gala-dual-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  flex-direction: column;
   gap: 0.85rem;
 }
 
-@media (min-width: 520px) {
-  .gala-dual-grid {
+.attire-event-heading {
+  text-align: center;
+}
+
+.event-time-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(223, 190, 118, 0.85);
+  margin-bottom: 0.25rem;
+}
+
+.attire-event-title {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.attire-theme-line {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.theme-highlight {
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.theme-highlight.orange-theme {
+  color: #fed7aa;
+}
+
+.theme-highlight.gold-theme {
+  color: #ffd778;
+}
+
+/* Silk Swatches Row (Hawan) */
+.swatches-palette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.4rem 0;
+}
+
+.swatches-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 48px;
+}
+
+.swatch-disc {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(223, 190, 118, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swatch-disc:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+}
+
+.swatch-peach {
+  background: radial-gradient(circle at 35% 35%, #fff1e5 0%, #fed7aa 60%, #fdba74 100%);
+}
+
+.swatch-apricot {
+  background: radial-gradient(circle at 35% 35%, #ffedd5 0%, #fb923c 60%, #f97316 100%);
+}
+
+.swatch-saffron {
+  background: radial-gradient(circle at 35% 35%, #ffedd5 0%, #ea580c 60%, #c2410c 100%);
+}
+
+.swatch-tangerine {
+  background: radial-gradient(circle at 35% 35%, #fdba74 0%, #c2410c 60%, #9a3412 100%);
+}
+
+.swatch-marigold {
+  background: radial-gradient(circle at 35% 35%, #f97316 0%, #9a3412 60%, #7c2d12 100%);
+}
+
+.swatch-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #dfd7c8;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.swatch-gradient-bar {
+  width: 100%;
+  max-width: 380px;
+  height: 4px;
+  border-radius: 999px;
+  margin-top: 0.2rem;
+}
+
+.orange-gradient-bar {
+  background: linear-gradient(90deg, #ffedd5 0%, #fed7aa 25%, #fb923c 50%, #ea580c 75%, #9a3412 100%);
+  box-shadow: 0 1px 6px rgba(234, 88, 12, 0.3);
+}
+
+.swatch-palette-hint {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.attire-event-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.28), transparent);
+  margin: 0.35rem 0;
+}
+
+/* Gala Attendees (Gentlemen & Ladies) */
+.gala-guidelines-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.95rem;
+}
+
+@media (min-width: 500px) {
+  .gala-guidelines-wrap {
     grid-template-columns: 1fr 1fr;
     gap: 1.15rem;
   }
 }
 
-.gala-card {
-  background: rgba(14, 7, 21, 0.65);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 12px;
-  padding: 0.85rem 0.95rem;
+.gala-attendee-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(14, 7, 21, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.gala-attendee-card:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  transform: translateY(-1px);
+}
+
+.attendee-avatar-wrap {
+  flex-shrink: 0;
+}
+
+.swatch-black {
+  background: radial-gradient(circle at 35% 35%, #2a2a2a 0%, #111111 60%, #000000 100%);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.swatch-gold-gradient {
+  background: radial-gradient(circle at 35% 35%, #fff9e6 0%, #f0dbaf 40%, #cfa959 75%, #85611f 100%);
+  border-color: rgba(255, 240, 180, 0.8);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+.attendee-content {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.2rem;
+  text-align: left;
 }
 
-.gala-role-title {
+.attendee-title {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #dfbe76;
+  letter-spacing: 0.12em;
+  color: var(--champagne-gold);
+  margin: 0;
 }
 
-.palette-ribbon.black-spectrum {
-  background: linear-gradient(90deg, #050505 0%, #1a1a1a 50%, #353535 100%);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-}
-
-.palette-ribbon.gold-spectrum {
-  background: linear-gradient(90deg, #fff9e6 0%, #faedd0 25%, #dfbe76 55%, #b58933 80%, #faedd0 100%);
-  border: 1px solid rgba(250, 204, 21, 0.45);
-  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.3);
-}
-
-.gala-detail {
+.attendee-color-badge {
   font-family: var(--font-serif);
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.25;
+  margin: 0;
 }
 
-.gala-caption {
+.attendee-color-badge.gold-badge {
+  color: #faedd0;
+}
+
+.attendee-style-guide {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.73rem;
   color: var(--text-muted);
   line-height: 1.35;
+  margin-top: 0.1rem;
 }
 
 @media (max-width: 480px) {
@@ -1006,8 +1131,18 @@ img, svg {
   .event-title {
     font-size: 1.1rem;
   }
-  .palette-shades {
+  .swatches-row {
+    gap: 0.75rem;
+  }
+  .swatch-disc {
+    width: 32px;
+    height: 32px;
+  }
+  .swatch-name {
     font-size: 0.68rem;
+  }
+  .gala-attendee-card {
+    padding: 0.85rem 0.95rem;
   }
 }
 

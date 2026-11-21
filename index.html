@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=5.0">
+  <link rel="stylesheet" href="style.css?v=6.0">
 </head>
 <body>
 
@@ -190,57 +190,90 @@
         </div>
       </div>
 
-      <!-- Dedicated Celebration Attire & Color Guide Card -->
+      <!-- Dedicated Celebration Attire Guide Card -->
       <div class="attire-guide-card reveal-on-scroll">
-        <div class="guide-card-header">
-          <span class="guide-ornament" aria-hidden="true">✧</span>
-          <h3 class="guide-card-title">Celebration Attire Guide</h3>
-          <span class="guide-ornament" aria-hidden="true">✧</span>
+        <div class="guide-header-block">
+          <p class="guide-kicker">Celebration Dress Code</p>
+          <h3 class="guide-main-title">Celebration Attire Guide</h3>
+          <p class="guide-subtitle">A curated palette of auspicious hues for our family &amp; friends</p>
+          <div class="guide-gold-rule" aria-hidden="true">
+            <span class="rule-line"></span>
+            <span class="rule-diamond">◆</span>
+            <span class="rule-line"></span>
+          </div>
         </div>
 
-        <div class="attire-occasions">
-          <!-- Hawan Palette -->
-          <div class="occasion-block">
-            <div class="occasion-header">
-              <h4 class="occasion-title">Sacred Hawan</h4>
-              <span class="occasion-tag orange-tag">Shades of Orange</span>
+        <div class="attire-sections-wrap">
+          <!-- 1. Sacred Hawan -->
+          <div class="attire-event-card">
+            <div class="attire-event-heading">
+              <span class="event-time-badge">Morning Ceremony • 11:00 AM</span>
+              <h4 class="attire-event-title">Sacred Hawan &amp; Pujan</h4>
+              <p class="attire-theme-line">Theme: <span class="theme-highlight orange-theme">Shades of Orange</span></p>
             </div>
-            <div class="palette-wrap">
-              <div class="palette-ribbon orange-spectrum" role="img" aria-label="Gradient palette from Peach to Marigold"></div>
-              <div class="palette-shades">
-                <span>Peach</span>
-                <span>Apricot</span>
-                <span>Saffron</span>
-                <span>Tangerine</span>
-                <span>Marigold</span>
+
+            <!-- Authentic Silk Fabric Color Swatches -->
+            <div class="swatches-palette-container">
+              <div class="swatches-row">
+                <div class="swatch-item">
+                  <div class="swatch-disc swatch-peach" title="Peach"></div>
+                  <span class="swatch-name">Peach</span>
+                </div>
+                <div class="swatch-item">
+                  <div class="swatch-disc swatch-apricot" title="Apricot"></div>
+                  <span class="swatch-name">Apricot</span>
+                </div>
+                <div class="swatch-item">
+                  <div class="swatch-disc swatch-saffron" title="Saffron"></div>
+                  <span class="swatch-name">Saffron</span>
+                </div>
+                <div class="swatch-item">
+                  <div class="swatch-disc swatch-tangerine" title="Tangerine"></div>
+                  <span class="swatch-name">Tangerine</span>
+                </div>
+                <div class="swatch-item">
+                  <div class="swatch-disc swatch-marigold" title="Marigold"></div>
+                  <span class="swatch-name">Marigold</span>
+                </div>
               </div>
+              <div class="swatch-gradient-bar orange-gradient-bar" aria-hidden="true"></div>
+              <p class="swatch-palette-hint">From soft pastel peach to festive deep marigold</p>
             </div>
           </div>
 
-          <div class="guide-divider" aria-hidden="true"></div>
+          <div class="attire-event-divider" aria-hidden="true"></div>
 
-          <!-- Gala Dinner Palette -->
-          <div class="occasion-block">
-            <div class="occasion-header">
-              <h4 class="occasion-title">Gala Dinner</h4>
-              <span class="occasion-tag gold-tag">Black &amp; Shades of Golden</span>
+          <!-- 2. Gala Dinner -->
+          <div class="attire-event-card">
+            <div class="attire-event-heading">
+              <span class="event-time-badge">Evening Festivities • 8:00 PM</span>
+              <h4 class="attire-event-title">Gala Dinner &amp; Celebrations</h4>
+              <p class="attire-theme-line">Theme: <span class="theme-highlight gold-theme">Black &amp; Shades of Golden</span></p>
             </div>
 
-            <div class="gala-dual-grid">
-              <!-- Men -->
-              <div class="gala-card">
-                <div class="gala-role-title">Gentlemen</div>
-                <div class="palette-ribbon black-spectrum" role="img" aria-label="Classic Black spectrum"></div>
-                <div class="gala-detail">Classic Black</div>
-                <div class="gala-caption">Tuxedo, Bandhgala, or Classic Kurta</div>
+            <div class="gala-guidelines-wrap">
+              <!-- Gentlemen -->
+              <div class="gala-attendee-card">
+                <div class="attendee-avatar-wrap">
+                  <div class="swatch-disc swatch-black" title="Classic Black"></div>
+                </div>
+                <div class="attendee-content">
+                  <h5 class="attendee-title">Gentlemen</h5>
+                  <p class="attendee-color-badge">Classic Black</p>
+                  <p class="attendee-style-guide">Tuxedo, Bandhgala, or Classic Kurta</p>
+                </div>
               </div>
 
-              <!-- Women -->
-              <div class="gala-card">
-                <div class="gala-role-title">Ladies</div>
-                <div class="palette-ribbon gold-spectrum" role="img" aria-label="Golden tones spectrum"></div>
-                <div class="gala-detail">Any Colour with Gold</div>
-                <div class="gala-caption">Saree, Lehanga, or Gown with Golden Tones</div>
+              <!-- Ladies -->
+              <div class="gala-attendee-card">
+                <div class="attendee-avatar-wrap">
+                  <div class="swatch-disc swatch-gold-gradient" title="Shades of Golden"></div>
+                </div>
+                <div class="attendee-content">
+                  <h5 class="attendee-title">Ladies</h5>
+                  <p class="attendee-color-badge gold-badge">Any Colour with Gold</p>
+                  <p class="attendee-style-guide">Saree, Lehanga, or Gown with Golden Tones</p>
+                </div>
               </div>
             </div>
           </div>
@@ -430,6 +463,6 @@
 
   </main>
 
-  <script src="script.js?v=5.0"></script>
+  <script src="script.js?v=6.0"></script>
 </body>
 </html>

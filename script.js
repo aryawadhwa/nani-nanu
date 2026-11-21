@@ -121,7 +121,7 @@ function updateAudioUI(playing) {
     btn.classList.toggle('playing', playing);
   }
   if (label) {
-    label.textContent = playing ? 'Music On' : 'Play Music ♫';
+    label.textContent = playing ? 'Music On' : 'Play Music';
   }
   if (icon) {
     icon.style.opacity = playing ? '1' : '0.6';
@@ -489,7 +489,7 @@ function initRsvpForm() {
     const attendanceText = attendanceLabels[attendance] || attendance;
 
     // Compose royal WhatsApp message
-    let message = `🌸 *RSVP: Anita & Vimal's 50th Golden Anniversary* 🌸\n`;
+    let message = `*RSVP: Anita & Vimal's 50th Golden Anniversary*\n`;
     message += `*Venue:* Sawarthia Sewa Sadan, Ayodhya Dham (Sunday, Dec 27, 2026)\n\n`;
     message += `• *Guest Name:* ${name}\n`;
     message += `• *Response:* ${attendanceText}\n`;
@@ -499,7 +499,7 @@ function initRsvpForm() {
     if (note) {
       message += `• *Message / Wishes:* ${note}\n`;
     }
-    message += `\nLooking forward to celebrating together! 🙏✨`;
+    message += `\nLooking forward to celebrating together!`;
 
     const waUrl = `https://wa.me/${recipientPhone}?text=${encodeURIComponent(message)}`;
 
@@ -534,7 +534,7 @@ function initRsvpForm() {
     if (submitBtn) {
       submitBtn.innerHTML = `
         <svg class="btn-svg" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>RSVP Sent via WhatsApp ✓</span>
+        <span>RSVP Sent via WhatsApp</span>
       `;
     }
 

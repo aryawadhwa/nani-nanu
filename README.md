@@ -4,7 +4,7 @@ A mobile-first, cinematic digital invitation celebrating 50 Sacred Years of Anit
 
 ---
 
-## ✨ Features & Design Highlights
+## Features & Design Highlights
 
 - **Sacred Ayodhya Aesthetic**: Twilight plum (`#0c0813`), royal Kesariya saffron (`#e65100`), vibrant marigold gold (`#f59e0b`), and soft Chandan ivory typography (`#fcfbf7`).
 - **Zero Raw Emojis**: 100% crisp inline vector SVG graphics for authentic luxury presentation.
@@ -20,7 +20,7 @@ A mobile-first, cinematic digital invitation celebrating 50 Sacred Years of Anit
 
 ---
 
-## 📱 Mobile-First Architecture
+## Mobile-First Architecture
 
 - Fluid `clamp()` typography and full viewport support (`100dvh`).
 - Minimum 48px touch targets for comfortable one-handed phone use.
@@ -29,7 +29,7 @@ A mobile-first, cinematic digital invitation celebrating 50 Sacred Years of Anit
 
 ---
 
-## 🚀 Live Deployment via GitHub Pages
+## Live Deployment via GitHub Pages
 
 This repository is ready to be served directly with GitHub Pages:
 

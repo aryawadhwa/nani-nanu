@@ -1468,21 +1468,34 @@ img, svg {
   gap: 0.85rem;
 }
 
-@media (min-width: 480px) {
-  .rsvp-contacts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .rsvp-contact-card {
   background: rgba(22, 13, 34, 0.7);
   border: 1px solid rgba(245, 158, 11, 0.28);
   border-radius: 12px;
-  padding: 0.95rem 1rem;
+  padding: 0.95rem 1.15rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rsvp-contact-card:hover {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+@media (min-width: 520px) {
+  .rsvp-contact-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact-actions {
+    min-width: 230px;
+    flex-shrink: 0;
+  }
 }
 
 .contact-header {
@@ -1548,6 +1561,7 @@ img, svg {
   gap: 0.35rem;
   text-decoration: none;
   font-weight: 700;
+  white-space: nowrap;
   box-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
   transition: transform 0.18s, box-shadow 0.18s;
   min-block-size: 40px;
@@ -1571,6 +1585,7 @@ img, svg {
   gap: 0.35rem;
   text-decoration: none;
   font-weight: 600;
+  white-space: nowrap;
   transition: transform 0.18s, border-color 0.18s, color 0.18s;
   min-block-size: 40px;
 }

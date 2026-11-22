@@ -239,18 +239,31 @@ function initParticleCanvas() {
 
       const alphaVal = Math.max(0.12, Math.min(0.9, p.alpha));
 
+      const isPinkWhite = document.documentElement.getAttribute('data-theme') === 'pink-white';
       ctx.save();
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
 
-      if (p.isDiya) {
-        ctx.fillStyle = `rgba(255, 152, 0, ${alphaVal})`;
-        ctx.shadowColor = 'rgba(255, 111, 0, 0.85)';
-        ctx.shadowBlur = 14;
+      if (isPinkWhite) {
+        if (p.isDiya) {
+          ctx.fillStyle = `rgba(244, 160, 185, ${alphaVal})`;
+          ctx.shadowColor = 'rgba(235, 130, 160, 0.6)';
+          ctx.shadowBlur = 10;
+        } else {
+          ctx.fillStyle = `rgba(205, 140, 90, ${alphaVal})`;
+          ctx.shadowColor = 'rgba(225, 175, 140, 0.5)';
+          ctx.shadowBlur = 6;
+        }
       } else {
-        ctx.fillStyle = `rgba(245, 158, 11, ${alphaVal})`;
-        ctx.shadowColor = 'rgba(255, 235, 150, 0.6)';
-        ctx.shadowBlur = 8;
+        if (p.isDiya) {
+          ctx.fillStyle = `rgba(255, 152, 0, ${alphaVal})`;
+          ctx.shadowColor = 'rgba(255, 111, 0, 0.85)';
+          ctx.shadowBlur = 14;
+        } else {
+          ctx.fillStyle = `rgba(245, 158, 11, ${alphaVal})`;
+          ctx.shadowColor = 'rgba(255, 235, 150, 0.6)';
+          ctx.shadowBlur = 8;
+        }
       }
 
       ctx.fill();
@@ -269,11 +282,17 @@ function initParticleCanvas() {
         continue;
       }
 
+      const isPinkWhite = document.documentElement.getAttribute('data-theme') === 'pink-white';
       ctx.save();
       ctx.beginPath();
       ctx.arc(bp.x, bp.y, bp.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 193, 7, ${bp.life})`;
-      ctx.shadowColor = 'rgba(230, 81, 0, 0.9)';
+      if (isPinkWhite) {
+        ctx.fillStyle = `rgba(235, 130, 160, ${bp.life})`;
+        ctx.shadowColor = 'rgba(215, 100, 135, 0.7)';
+      } else {
+        ctx.fillStyle = `rgba(255, 193, 7, ${bp.life})`;
+        ctx.shadowColor = 'rgba(230, 81, 0, 0.9)';
+      }
       ctx.shadowBlur = 12;
       ctx.fill();
       ctx.restore();
@@ -544,7 +563,40 @@ function initRsvpForm() {
 }
 
 // =============================================================================
-// 10. Scroll Fallback
+// 10. Theme Switcher (Option 2: Romantic Blush Pink & White vs Dark Velvet Gold)
+// =============================================================================
+function initThemeToggle() {
+  const themeBtn = document.getElementById('themeToggleBtn');
+  const label = document.getElementById('themeStatusText');
+
+  // Check saved preference or default to 'pink-white' (user choice)
+  const savedTheme = localStorage.getItem('anniversary_theme') || 'pink-white';
+  setTheme(savedTheme);
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const current = document.documentElement.getAttribute('data-theme');
+      const nextTheme = current === 'pink-white' ? 'dark-gold' : 'pink-white';
+      setTheme(nextTheme);
+    });
+  }
+
+  function setTheme(theme) {
+    if (theme === 'pink-white') {
+      document.documentElement.setAttribute('data-theme', 'pink-white');
+      if (label) label.textContent = 'Pink & White';
+      localStorage.setItem('anniversary_theme', 'pink-white');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (label) label.textContent = 'Velvet Gold';
+      localStorage.setItem('anniversary_theme', 'dark-gold');
+    }
+  }
+}
+
+// =============================================================================
+// 11. Scroll Fallback
 // =============================================================================
 function initScrollFallback() {
   const supportsNativeScrollTimeline = CSS.supports && CSS.supports('(animation-timeline: view()) and (animation-range: entry)');
@@ -571,6 +623,7 @@ function initScrollFallback() {
 // Initialize
 // =============================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initParticleCanvas();
   initAudioControls();
   initAddToCalendar();

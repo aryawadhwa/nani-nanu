@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="pink-white">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
   <title>Anita & Vimal | 50th Golden Anniversary — Ayodhya</title>
   <meta name="description" content="Celebrating 50 Sacred Years of Anita & Vimal at Sawarthia Sewa Sadan, Ayodhya. Sunday, December 27, 2026.">
   
@@ -52,8 +53,15 @@
   <!-- Floating Sacred River Diyas & Temple Gold Embers Canvas -->
   <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
-  <!-- Temple Sound Control (Graphic Icon) -->
-  <aside class="audio-control" aria-label="Sound player">
+  <!-- Top Floating Controls: Theme Switcher & Temple Music -->
+  <aside class="audio-control top-controls" aria-label="Page controls">
+    <button id="themeToggleBtn" class="audio-btn theme-btn" type="button" aria-label="Toggle between Pink & White and Velvet Gold themes" title="Switch Theme">
+      <svg class="graphic-icon theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/>
+      </svg>
+      <span class="music-label" id="themeStatusText">Pink & White</span>
+    </button>
     <button id="audioToggleBtn" class="audio-btn" type="button" aria-label="Toggle sacred temple bells and celebratory music" title="Toggle Sound">
       <svg class="graphic-icon bell-icon" id="musicIcon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
